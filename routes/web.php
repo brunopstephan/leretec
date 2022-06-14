@@ -20,5 +20,3 @@ Route::get('/', function () {
 Route::get('/form', function () {
     return view('leretec/form');
 });
-
-Route::post('/form', [MeasurementsController::class,'store']);
