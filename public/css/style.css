@@ -285,6 +285,11 @@ footer ul {
     width: 20rem;
 }
 
+.card-footer{
+    display: flex;
+    gap: 10px;
+}
+
 .card-footer .btn{
     background: var(--nav-primary);
     border: none;
@@ -302,6 +307,50 @@ footer ul {
     border-radius: 2rem;
     border: 2px solid black;
 }
+
+.card-footer ul{
+    margin: 0;
+    padding: 0;
+    display: flex ;
+    align-items: center;
+}
+
+.card-footer ul li{
+    display: flex;
+    align-items: center;
+    padding-top: 0.4rem;
+    position: relative;
+    width: 100%;
+    height: 10px;
+}
+
+.card-footer ul li:hover{
+    cursor: pointer;
+
+}
+
+.card-footer ul li .sinopse{
+    position: absolute;
+    bottom: 55px;
+    width: 400px;
+    background: #777;
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 1.4rem;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 300ms ease;
+    z-index: 100;
+    color: black;
+    font-weight: 500;
+}
+
+.card-footer ul li:hover .sinopse{
+    visibility: visible;
+    opacity: 1;
+}
+
+
 
 /* BACK TO TOP BUTTON */
 

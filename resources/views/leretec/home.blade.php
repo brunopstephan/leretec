@@ -56,12 +56,17 @@
                         <div class="d-flex bd_highlight">
                             <h5 class="card-title w-100">{{$card->title_historia}}</h5>
                         </div>
-                        <p class="card-text">Amogs the history</p>
                     </div><!-- card-body -->
                     <div class="card-footer">
-                        <a href="" class="btn btn-secondary w-100 my-3" target="_blank" rel="noreferrer noopener">
-                            Ler Historia
-                        </a>
+                        <a href="" class="btn btn-secondary w-100 my-3" target="_blank" rel="noreferrer noopener">Ler Historia</a>
+                        <ul>
+                            <li>
+                                <h5>Sinopse</h5>
+                                <div class="sinopse">
+                                    <p>{{$card->sinopse_historia}}</p>
+                                </div>
+                            </li>
+                        </ul>
                     </div><!-- fim do card-footer -->
                 </div><!-- fim do card -->
             </div>
