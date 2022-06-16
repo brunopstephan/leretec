@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\LeretecController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,3 +21,11 @@ Route::get('/', function () {
 Route::get('/form', function () {
     return view('leretec/form');
 });
+
+Route::get('/admin', function () {
+    return view('leretec/login');
+});
+
+Route::post('/form', [LeretecController::class,'store']);
+
+Route::get('/', [LeretecController::class, 'index']);

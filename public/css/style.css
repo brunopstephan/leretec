@@ -27,7 +27,6 @@
 }
 
 
-
 body {
     font-family: 'Montserrat', sans-serif;
     line-height: 1.7;
@@ -138,6 +137,10 @@ nav {
 .nav_menu a:hover{
     color:var(--color-bg2)
 
+}
+
+.nav_menu .uil-lock{
+    height: 10rem;
 }
 
 
@@ -273,10 +276,13 @@ footer ul {
     background: var(--color-card) ;
     border-radius: 2rem;
     color: white;
+
 }
 
 .card img {
     border-radius: 2rem;
+    height: 20rem;
+    width: 20rem;
 }
 
 .card-footer .btn{
@@ -289,6 +295,13 @@ footer ul {
     color: var(--nav-primary);
 }
 
+.card-container{
+    padding-top: 3rem;
+    background: var(--nav-primary);
+    margin-bottom: 2rem;
+    border-radius: 2rem;
+    border: 2px solid black;
+}
 
 /* BACK TO TOP BUTTON */
 
@@ -316,4 +329,14 @@ footer ul {
 
 /* FORM */
 
+.form-card{
+    color: black;
+}
 
+.card-header{
+    display: flex;
+    justify-content: center;
+    padding-right: 12rem;
+    padding-top: 1rem;
+    margin-bottom: 1em;
+}
