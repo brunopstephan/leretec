@@ -22,7 +22,7 @@
     --container-width-md: 90%;
     --container-width-sm: 94%;
 
-    --transition: all 400ms ease;
+    --transition: all 300ms ease;
 
 }
 
@@ -33,6 +33,18 @@ body {
     color: var(--color-white);
     background: var(--color-bg);
     
+}
+
+.btn-all {
+    background: var(--nav-primary);
+    border: none;
+    border-radius: 4rem;
+    color: white;
+    transition: var(--transition);
+}
+
+.btn-all:hover{
+    color: var(--nav-primary);
 }
 
 .container{ /* Containers EM GERAL */
@@ -233,6 +245,12 @@ footer ul {
     margin-top: 8rem;
 }
 
+.btn-carousel{
+    padding: 1rem;
+    padding-inline: 2rem;
+
+}
+
 .carousel-item {
     height: 32rem;
     color: white;
@@ -326,14 +344,14 @@ footer ul {
     height: 10px;
 }
 
-.card-footer ul li:hover{
+.card-footer ul li h5:hover{
     cursor: pointer;
     text-decoration: underline;
 }
 
 .card-footer ul li .sinopse{
     position: absolute;
-    bottom: 55px;
+    bottom: 55;
     width: 400px;
     background: #777;
     padding: 20px;
@@ -342,7 +360,7 @@ footer ul {
     visibility: hidden;
     opacity: 0;
     transition: all 300ms ease;
-    z-index: 100;
+    z-index: 1000;
     color: black;
     font-weight: 570;
 }
@@ -384,10 +402,92 @@ footer ul {
     color: black;
 }
 
+.form-card h4{
+    margin-top: 20px;
+    color: white;
+}
+
 .card-header{
     display: flex;
     justify-content: center;
     padding-right: 12rem;
     padding-top: 1rem;
-    margin-bottom: 1em;
+    margin-bottom: 1rem;
+
+    background: transparent;
 }
+
+
+.back .btn-back{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ADMIN */
+
+.btn-add{
+    position: absolute;
+    right: 0;
+    margin-right: 4rem;
+    padding-inline: 2rem;
+    padding-block: 0.6rem;
+    transition: all 300ms ease;
+}
+
+
+.uil-ellipsis-v{
+    color: white;
+}
+
+.btn-admin{
+    background: var(--nav-primary);
+}
+
+.dropdown-admin{
+    background: transparent;
+    position: absolute;
+}
+
+
+.delete-btn{
+    background: red;
+    border: none;
+    border-radius: 3rem;
+    margin-top: 10px;
+    transition: all 300ms ease;
+    font-weight: 600;
+}
+
+.delete-btn:hover{
+    background: #1b1b1b;
+    color: black;
+}
+
+.edit-btn{
+    background: white;
+    border: none;
+    border-radius: 3rem;
+    color: black;
+    padding-inline: 0.7rem;
+    padding-block: 0.2rem;
+    font-weight: 600;
+    transition: all 300ms ease;
+}
+
+.edit-btn:hover{
+    background: #1b1b1b;
+    color: black;
+}
+
+/* edit */
+
+.img-preview{
+    width: 500px;
+    margin-top: 10px;
+    border: 2px solid black;
+    border-radius: 5rem;
+}
+
+

@@ -23,11 +23,11 @@
                             {{-- Peso  --}}
                             <div class="form-card form-floating mb-3">
                                 <input name="admin_password" class="form-control" id="adminPass" type="text" placeholder="Senha" data-sb-validations="required" />
-                                <label for="pesoKg">Peso(Kg)</label>
+                                <label for="password">Senha</label>
                                 <div class="invalid-feedback" data-sb-feedback="pesoKg:required">Peso(Kg) é obrigatório.</div>
                             </div>
 
-                            <a href="/admin" class="btn btn-lg btn-secondary">Entrar</a>
+                            <a href="/admin" class="btn-all btn-lg">Entrar</a>
 
                         </form>
                     </div>

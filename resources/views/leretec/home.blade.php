@@ -10,7 +10,7 @@
             <img src="https://play-lh.googleusercontent.com/5B6Z4GWPuAlrnZDtqI8tdlnngu4dg-QG3lD2OTIvyvzSGCRJibEDaAbvQr6TMCPjqUc" class="d-block h-100 w-100" alt="...">
             <div class="carousel-caption d-none d-md-block">
             <h5>Amogus: The History</h5>
-            <a href="#" class="btn btn-lg">Ler História</a>
+            <a href="/historia" class="btn-all btn-carousel btn-lg" target="_blank">Ler História</a>
             </div>
         </div>
         
@@ -20,7 +20,7 @@
             <img src="{{$carousel_item->cover_historia}}" class="d-block h-100 w-100" alt="...">
             <div class="carousel-caption d-none d-md-block">
             <h5>{{$carousel_item->title_historia}}</h5>
-            <a href="#" class="btn btn-lg">Ler História</a>
+            <a href="" class="btn btn-lg">Ler História</a>
             </div>
         </div>
 
@@ -29,11 +29,11 @@
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
+        <span class="visually-hidden">Anterior</span>
         </button>
         <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
+        <span class="visually-hidden">Proximo</span>
         </button>
     </div>
 
@@ -58,7 +58,7 @@
                         </div>
                     </div><!-- card-body -->
                     <div class="card-footer">
-                        <a href="" class="btn btn-secondary w-100 my-3" target="_blank" rel="noreferrer noopener">Ler Historia</a>
+                        <a href="/historia" class="btn btn-secondary w-100 my-3" target="_blank" rel="noreferrer noopener">Ler Historia</a>
                         <ul>
                             <li>
                                 <h5>Sinopse</h5>

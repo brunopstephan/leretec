@@ -3,7 +3,10 @@
 @section('container')
 <div class="container">
     <div class="container px-5 my-5">
-        <div class="card-header bg-secondary text-white">
+        <div class="back">
+            <a href="/admin" class="btn-back btn-all btn-sm"><i class="uil uil-corner-up-left-alt"></i>Voltar</a>
+        </div>
+        <div class="card-header text-white">
             <h1>Cadastrar</h1>
         </div>
         <form action="/form" method="POST">
@@ -59,8 +62,8 @@
                 <div class="invalid-feedback" data-sb-feedback="sinopseDaHistoria:required">História é obrigatório.</div>
             </div>
             <div class="d-flex">
-                <button class="btn btn-secondary btn-lg flex-fill me-1" id="submitButton" type="submit">Enviar</button>
-                <button class="btn btn-secondary btn-lg flex-fill ms-1" id="reset" type="reset">Limpar</button> 
+                <button class="btn-all btn-lg flex-fill me-1" id="submitButton" type="submit">Enviar</button>
+                <button class="btn-all btn-lg flex-fill ms-1" id="reset" type="reset">Limpar</button> 
             </div>
         </form>
     </div>

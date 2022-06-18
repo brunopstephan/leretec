@@ -12,6 +12,16 @@ class LeretecController extends Controller
         return view('/leretec/home',['leretec' => $leretec]);
     }
 
+    public function index_admin(){
+        $leretec = Leretec::all();
+        return view('/leretec/admin',['leretec' => $leretec]);
+    }
+
+    public function index_historia(){
+        $leretec = Leretec::all();
+        return view('/leretec/history',['leretec' => $leretec]);
+    }
+
     public function store(Request $request){
         $leretec = new Leretec();
 
@@ -26,6 +36,30 @@ class LeretecController extends Controller
 
         $leretec->save();
 
-        return redirect('/');
+        return redirect('/admin');
     }   
+
+    public function destroy($id){
+
+        Leretec::findOrFail($id)->delete(); 
+
+        return redirect('/admin');
+    }
+
+    public function edit($id){
+
+        $leretec = Leretec::findOrFail($id);
+
+        return view('leretec.edit', ['leretec' => $leretec]);
+
+    }
+
+    public function update(Request $request) {
+
+        
+        Leretec::findOrFail($request->id)->update($request->all());
+
+        return redirect('/admin');
+    }
+
 }
