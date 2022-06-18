@@ -22,8 +22,12 @@ Route::get('/form', function () {
     return view('leretec/form');
 });
 
-Route::get('/admin', function () {
+Route::get('/login', function () {
     return view('leretec/login');
+});
+
+Route::get('/admin', function () {
+    return view('leretec/admin');
 });
 
 Route::post('/form', [LeretecController::class,'store']);

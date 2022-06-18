@@ -27,7 +27,7 @@
                                 <div class="invalid-feedback" data-sb-feedback="pesoKg:required">Peso(Kg) é obrigatório.</div>
                             </div>
 
-                            <a href="/form" class="btn btn-lg btn-secondary">Entrar</a>
+                            <a href="/admin" class="btn btn-lg btn-secondary">Entrar</a>
 
                         </form>
                     </div>

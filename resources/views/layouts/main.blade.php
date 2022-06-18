@@ -53,7 +53,7 @@
         </a>
             <ul class = "nav_menu">
             <li><a href = "/">Envie sua História</a></li>
-            <li><a class="button" href = "/admin"><i class="uil uil-lock"></i></a></li>
+            <li><a class="button" href = "/login"><i class="uil uil-lock"></i></a></li>
           </ul>
       </div> 
     </nav>
