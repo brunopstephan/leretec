@@ -37,10 +37,11 @@ body {
 
 .btn-all {
     background: var(--nav-primary);
-    border: none;
+    border: 1px solid #777;
     border-radius: 4rem;
     color: white;
     transition: var(--transition);
+
 }
 
 .btn-all:hover{
@@ -290,19 +291,26 @@ footer ul {
     padding-left: 4.2rem;
     display: flex;
     color: black;
+    width: 400px;
+    margin-left: 1rem;
+
+    
 }
 
 .card{
     background: var(--color-card) ;
     border-radius: 2rem;
     color: white;
+}
 
+.card-title{
+    font-size: 1.1rem;
 }
 
 .card img {
     border-radius: 2rem;
     height: 20rem;
-    width: 20rem;
+    width: 100% ;
 }
 
 .card-footer{
@@ -395,6 +403,11 @@ footer ul {
     visibility: visible;
     transform: translateY(0);
 }
+/* login */
+
+.login-row{
+    margin-bottom: 119px;
+}
 
 /* FORM */
 
@@ -427,28 +440,48 @@ footer ul {
 
 /* ADMIN */
 
+.admin-row{
+    margin-top: 3rem;
+}
+
 .btn-add{
     position: absolute;
-    right: 0;
-    margin-right: 4rem;
-    padding-inline: 2rem;
+    background: var(--color-bg);
+    border: 2px solid #777;
     padding-block: 0.6rem;
+    padding-inline: 2rem;
     transition: all 300ms ease;
+    z-index: 1;
+    top: 100px;
+    right: 370px;
 }
 
 
 .uil-ellipsis-v{
     color: white;
+    transition: all 300ms ease;
+}
+
+.uil-ellipsis-v:hover{
+    color: transparent;
+}
+
+.btn-admin i{
+    width: 100%;
 }
 
 .btn-admin{
     background: var(--nav-primary);
+    max-height: 30px;
 }
 
 .dropdown-admin{
     background: transparent;
     position: absolute;
+    border: none;
+    transition: all 400ms ease;
 }
+
 
 
 .delete-btn{
@@ -480,6 +513,8 @@ footer ul {
     background: #1b1b1b;
     color: black;
 }
+
+
 
 /* edit */
 

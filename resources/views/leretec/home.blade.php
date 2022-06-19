@@ -20,7 +20,7 @@
             <img src="{{$carousel_item->cover_historia}}" class="d-block h-100 w-100" alt="...">
             <div class="carousel-caption d-none d-md-block">
             <h5>{{$carousel_item->title_historia}}</h5>
-            <a href="" class="btn btn-lg">Ler História</a>
+            <a href="/historia" class="btn-all btn-carousel btn-lg" target="_blank">Ler História</a>
             </div>
         </div>
 
@@ -50,7 +50,7 @@
             @foreach ($leretec as $card)
             <div class="card_history col-lg-4 col-md-6 col-sm-12">
                 <!-- Card -->
-                <div class="card text-center shadow-lg">
+                <div class="card-book card text-center shadow-lg">
                         <img src="{{$card->cover_historia}}" alt="">
                     <div class="card-body">
                         <div class="d-flex bd_highlight">

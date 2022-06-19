@@ -2,10 +2,10 @@
 
 @section('container')
 <div class="container">
-    <div class="row">
+    <div class="login-row row">
         <div class="col-12">
             <div class="card shadow-sm">
-                <div class="card-header bg-secondary text-white">
+                <div class="card-header text-white">
                     <h1>Modo Administrador</h1>
                 </div>
                 <div class="card-body">
@@ -13,14 +13,14 @@
                         <form action="/form" method="POST">
                             @csrf {{--  permitindo que todo mundo poss afazer POST sem estar autenticado --}}
 
-                            {{-- Data  --}}
+
                             <div class="form-card form-floating mb-3">
                                 <input name="admin_user" class="form-control" id="adminUser" type="text" placeholder="Usuário" data-sb-validations="required" />
                                 <label for="dataMed">Usuário</label>
                                 <div class="invalid-feedback" data-sb-feedback="dataMed:required">Data da medição é obrigatório.</div>
                             </div>
 
-                            {{-- Peso  --}}
+
                             <div class="form-card form-floating mb-3">
                                 <input name="admin_password" class="form-control" id="adminPass" type="text" placeholder="Senha" data-sb-validations="required" />
                                 <label for="password">Senha</label>

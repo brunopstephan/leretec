@@ -1,7 +1,7 @@
 @extends('layouts/main')
 
 @section('container')
-<div class="container">
+<div class="container card-container">
     <div class="container px-5 my-5">
         <div class="back">
             <a href="/admin" class="btn-back btn-all btn-sm"><i class="uil uil-corner-up-left-alt"></i>Voltar</a>

@@ -1,30 +1,33 @@
 @extends('layouts/main')
 
 @section('container')
-    <a href="/form" class="btn-all btn-add btn-md">Inserir Historia</a>
     <div class="container card-container">
-        <div class="row">
+        <a href="/form" class="btn-all btn-add btn-md">Inserir Historia</a>
+        <div class="admin-row row">
             @foreach ($leretec as $card)
             <div class="card_history col-lg-4 col-md-6 col-sm-12">
                 <!-- Card -->
                 <div class="card text-center shadow-lg">
                         <img src="{{$card->cover_historia}}" alt="">
                     <div class="card-body">
-                        <div class="d-flex bd_highlight">
-                            <h5 class="card-title w-100">{{$card->title_historia}}</h5>
-                            <div class="btn-group">
-                                <button class="btn btn-admin btn-sm" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    <i class="uil uil-ellipsis-v"></i>
-                                </button>
-                                <ul class="dropdown-admin dropdown-menu">
-                                    <a href="/admin/edit/{{$card->id}}" class="edit-btn"><i class="uil uil-edit"></i>Editar</a>
-                                    <form action="/admin/{{$card->id}}" method="POST">
-                                        @csrf
-                                        @method('DELETE')
-                                        <button type="submit" class="delete-btn"><i class="uil uil-trash-alt"></i>Deletar</button>
-                                    </form>
-                                </ul>
-                              </div>
+                        <div class="card-admin">
+                            <div class="d-flex bd_highlight">
+                                <h5 class="card-title w-100">{{$card->title_historia}}</h5>
+
+                                <div class="btn-admin btn-group">
+                                    <button class="btn btn-sm" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        <i class="uil uil-ellipsis-v"></i>
+                                    </button>
+                                    <ul class="dropdown-admin dropdown-menu">
+                                        <a href="/admin/edit/{{$card->id}}" class="edit-btn"><i class="uil uil-edit"></i>Editar</a>
+                                        <form action="/admin/{{$card->id}}" method="POST">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit" class="delete-btn"><i class="uil uil-trash-alt"></i>Deletar</button>
+                                        </form>
+                                    </ul>
+                            </div>
+                        </div>
                         </div>
                     </div><!-- card-body -->
                     <div class="card-footer">
