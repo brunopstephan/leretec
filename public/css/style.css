@@ -105,7 +105,6 @@ a{
 
 li {
     list-style: none;
-    
 }
 
 
@@ -117,6 +116,7 @@ nav {
     top: 0;
     z-index: 11; /*Sobrepôe tudo menor que ele(valor 11, o padrão é 0 para a maioria dos elementos */
 }
+
 
 .window-scroll{
     background: var(--nav-primary);
@@ -240,49 +240,40 @@ footer ul {
 
 /* carousel */
 
-.carousel{
-    width: 50rem;
-    margin-bottom: 4rem;
-    margin-top: 8rem;
-}
-
-.btn-carousel{
-    padding: 1rem;
-    padding-inline: 2rem;
-
-}
-
-.carousel-item {
-    height: 32rem;
-    color: white;
-    position: relative;
-}
-
-.carousel-item h5{
-    margin-bottom: 2rem;
-}
-
-.carousel h1{
-    padding-left: 11rem;
-    padding-bottom: 1.5rem;
-    text-decoration: underline;
-}
-
-.carousel .btn{
-    background: var(--nav-primary);
-}
-
-.carousel .btn:hover{
-    color: var(--nav-primary);
-}
-
-.carousel a{
-    color: white;
-}
-
-.carousel img{
+.swiper {
     border-radius: 2rem;
-}
+    border: 4px solid #777;
+    width: 40rem;
+    height: 30rem;
+  }
+
+  .swiper-slide {
+    color: black;
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+  }
+
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
 /* CARD */
 
 
