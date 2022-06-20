@@ -8,7 +8,7 @@
     <div class="container swiper mySwiper">
         <div class="swiper-wrapper">
             @foreach ($leretec as $carousel)
-            <div class="swiper-slide"><img src="{{$carousel->cover_historia}}" alt=""></div>
+            <div class="swiper-slide"><img src="{{$carousel->cover_historia}}" alt="">aaaa</div>
             @endforeach
         </div>
         <div class="swiper-button-next"></div>
