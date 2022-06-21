@@ -54,6 +54,8 @@ body {
     margin-top: 5rem;
 }
 
+
+
 .container h1{
     margin-left: 7.6rem;
 }
@@ -283,16 +285,27 @@ footer ul {
 
 /* CARD */
 
+.card-container{
+    padding-top: 3rem;
+    background: var(--nav-primary);
+    margin-bottom: 2rem;
+    border-radius: 2rem;
+    border: 2px solid black;
+}
+
+.row{
+    justify-content: center;
+    width: 100%;
+}
+
 
 .card_history{
     margin-bottom: 4rem;
     padding-left: 4.2rem;
     display: flex;
     color: black;
-    width: 400px;
+    width: 500px;
     margin-left: 1rem;
-
-    
 }
 
 .card{
@@ -324,14 +337,6 @@ footer ul {
 
 .card-footer .btn:hover{
     color: var(--nav-primary);
-}
-
-.card-container{
-    padding-top: 3rem;
-    background: var(--nav-primary);
-    margin-bottom: 2rem;
-    border-radius: 2rem;
-    border: 2px solid black;
 }
 
 .card-footer ul{

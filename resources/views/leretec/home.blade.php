@@ -36,7 +36,7 @@
     <div class="container card-container">
         <div class="row">
             @foreach ($leretec as $card)
-            <div class="card_history col-lg-4 col-md-6 col-sm-12">
+            <div class="card_history">
                 <!-- Card -->
                 <div class="card-book card text-center shadow-lg">
                         @if ($card->cover_historia == null)

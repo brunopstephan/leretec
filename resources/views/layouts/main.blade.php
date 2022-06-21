@@ -133,7 +133,7 @@
             slidesPerView: 2
           }
         }
-      });
+      }); 
     </script>
     
     {{-- JavaScript Geral --}}
