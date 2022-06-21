@@ -294,24 +294,27 @@ footer ul {
 }
 
 .row{
+    margin-left: 0.1rem;
     justify-content: center;
     width: 100%;
+    
 }
 
-
 .card_history{
+    max-width: 400px;
     margin-bottom: 4rem;
-    padding-left: 4.2rem;
+}
+
+.card-book{
     display: flex;
     color: black;
-    width: 500px;
-    margin-left: 1rem;
 }
 
 .card{
     background: var(--color-card) ;
     border-radius: 2rem;
     color: white;
+    
 }
 
 .card-title{
@@ -321,7 +324,7 @@ footer ul {
 .card img {
     border-radius: 2rem;
     height: 20rem;
-    width: 100% ;
+    width: 100%;
 }
 
 .card-footer{
@@ -362,7 +365,8 @@ footer ul {
 
 .card-footer ul li .sinopse{
     position: absolute;
-    bottom: 55;
+    top: 70;
+    right: 0;
     width: 400px;
     background: #777;
     padding: 20px;
