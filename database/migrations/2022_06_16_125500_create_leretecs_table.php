@@ -3,6 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use phpDocumentor\Reflection\Types\Nullable;
 
 return new class extends Migration
 {
@@ -20,7 +21,7 @@ return new class extends Migration
             $table->string('class_aluno');
             $table->string('grade_aluno');
             $table->string('title_historia');
-            $table->mediumtext('cover_historia');
+            $table->mediumtext('cover_historia')->nullable();
             $table->longtext('sinopse_historia');
             $table->longtext('historia');
             $table->timestamps();

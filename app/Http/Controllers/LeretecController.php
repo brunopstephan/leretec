@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreUpdateBookFormRequest;
 use App\Models\Leretec;
 use Illuminate\Http\Request;
 
@@ -22,7 +23,7 @@ class LeretecController extends Controller
         return view('/leretec/history',['leretec' => $leretec]);
     }
 
-    public function store(Request $request){
+    public function store(StoreUpdateBookFormRequest $request){
         $leretec = new Leretec();
 
         $leretec->date = $request->date;
@@ -56,7 +57,6 @@ class LeretecController extends Controller
 
     public function update(Request $request) {
 
-        
         Leretec::findOrFail($request->id)->update($request->all());
 
         return redirect('/admin');

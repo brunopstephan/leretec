@@ -10,6 +10,15 @@
         <div class="card-header text-white">
             <h1>Cadastrar</h1>
         </div>
+
+        @if ($errors->any())
+            <ul class="form-errors">
+                @foreach ($errors->all() as $error)
+                    <li class="form-error">{{$error}}</li>
+                @endforeach
+            </ul>
+        @endif
+
         <form action="/form" method="POST">
             @csrf {{--permitindo que todo mundo poss afazer POST sem estar autenticado --}}
             <div class="form-card form-floating mb-3">

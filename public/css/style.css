@@ -274,6 +274,13 @@ footer ul {
     height: 100%;
     object-fit: cover;
   }
+
+.slide-title{
+    color: blue;
+    z-index: 1000;
+}
+
+
 /* CARD */
 
 

@@ -8,7 +8,17 @@
     <div class="container swiper mySwiper">
         <div class="swiper-wrapper">
             @foreach ($leretec as $carousel)
-            <div class="swiper-slide"><img src="{{$carousel->cover_historia}}" alt="">aaaa</div>
+            <div class="swiper-slide">
+                @if ($carousel->cover_historia == null)
+                <img src="https://s2.glbimg.com/KxaOBiqtIGD0Uv6ZSshzi3aOo0U=/620x520/e.glbimg.com/og/ed/f/original/2021/02/05/leo-santana6.jpg" alt="">
+                @else
+                <img src="{{$carousel->cover_historia}}" alt="">
+                @endif
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>{{$carousel->title_historia}}</h5>
+                    <a href="/historia" class="btn-all btn-carousel btn-lg" target="_blank">Ler História</a>
+                    </div>
+            </div>
             @endforeach
         </div>
         <div class="swiper-button-next"></div>
@@ -29,7 +39,12 @@
             <div class="card_history col-lg-4 col-md-6 col-sm-12">
                 <!-- Card -->
                 <div class="card-book card text-center shadow-lg">
+                        @if ($card->cover_historia == null)
+                        <img src="https://s2.glbimg.com/KxaOBiqtIGD0Uv6ZSshzi3aOo0U=/620x520/e.glbimg.com/og/ed/f/original/2021/02/05/leo-santana6.jpg" alt="">
+                        @else
                         <img src="{{$card->cover_historia}}" alt="">
+                        @endif
+                        
                     <div class="card-body">
                         <div class="d-flex bd_highlight">
                             <h5 class="card-title w-100">{{$card->title_historia}}</h5>

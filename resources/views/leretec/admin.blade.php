@@ -8,7 +8,11 @@
             <div class="card_history col-lg-4 col-md-6 col-sm-12">
                 <!-- Card -->
                 <div class="card text-center shadow-lg">
-                        <img src="{{$card->cover_historia}}" alt="">
+                    @if ($card->cover_historia == null)
+                    <img src="https://s2.glbimg.com/KxaOBiqtIGD0Uv6ZSshzi3aOo0U=/620x520/e.glbimg.com/og/ed/f/original/2021/02/05/leo-santana6.jpg" alt="">
+                    @else
+                    <img src="{{$card->cover_historia}}" alt="">
+                    @endif
                     <div class="card-body">
                         <div class="card-admin">
                             <div class="d-flex bd_highlight">
