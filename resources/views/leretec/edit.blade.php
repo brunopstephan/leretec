@@ -9,6 +9,15 @@
         <div class="card-header text-white">
             <h1>Editando: {{$leretec->title_historia}}</h1>
         </div>
+
+        @if ($errors->any())
+        <ul class="form-errors">
+            @foreach ($errors->all() as $error)
+                <li class="form-error">{{$error}}</li>
+            @endforeach
+        </ul>
+        @endif
+
         <form action="/admin/update/{{$leretec->id}}" method="POST">
             @csrf {{--permitindo que todo mundo poss afazer POST sem estar autenticado --}}
             @method('PUT')

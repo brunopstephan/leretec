@@ -9,7 +9,7 @@
                 <!-- Card -->
                 <div class="card text-center shadow-lg">
                     @if ($card->cover_historia == null)
-                    <img src="https://s2.glbimg.com/KxaOBiqtIGD0Uv6ZSshzi3aOo0U=/620x520/e.glbimg.com/og/ed/f/original/2021/02/05/leo-santana6.jpg" alt="">
+                    <img src="img/default_image.png" alt="">
                     @else
                     <img src="{{$card->cover_historia}}" alt="">
                     @endif

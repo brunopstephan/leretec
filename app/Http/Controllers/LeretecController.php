@@ -55,7 +55,7 @@ class LeretecController extends Controller
 
     }
 
-    public function update(Request $request) {
+    public function update(StoreUpdateBookFormRequest $request) {
 
         Leretec::findOrFail($request->id)->update($request->all());
 
