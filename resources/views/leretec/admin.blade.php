@@ -4,7 +4,7 @@
     <div class="container card-container">
         <a href="/form" class="btn-all btn-add btn-md">Inserir Historia</a>
         <div class="admin-row row">
-            @foreach ($leretec as $card)
+            {{-- @foreach ($leretec as $card)
             <div class="card_history col-lg-4 col-md-6 col-sm-12">
                 <!-- Card -->
                 <div class="card text-center shadow-lg">
@@ -17,7 +17,7 @@
                         <div class="card-admin">
                             <div class="d-flex bd_highlight">
                                 <h5 class="card-title w-100">{{$card->title_historia}}</h5>
-
+                                <p>Ultima vez Atualizado: {{$card->updated_at}}</p>
                                 <div class="btn-admin btn-group">
                                     <button class="btn btn-sm" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                                         <i class="uil uil-ellipsis-v"></i>
@@ -48,7 +48,61 @@
                 </div><!-- fim do card -->
             </div>
         <!--fim da coluna -->
-        @endforeach
+        @endforeach --}}
+        <table class="table_admin table">
+            <thead>
+              <tr>
+                <th scope="col">Nome do Aluno</th>
+                <th scope="col">Titulo da Historia</th>
+                <th scope="col">Data de Criação</th>
+                <th scope="col">Ultima vez atualizada</th>
+              </tr>
+            <tbody>
+                @if (count($leretec))
+                @foreach ($leretec as $card)
+                <tr>
+                  <th scope="row">{{$card->name_aluno}}</th>
+                  <td>{{$card->title_historia}}</td>
+                  <td>{{$card->created_at->format('d/m/Y')}}</td>
+                  <td>{{$card->updated_at->format('d/m/Y H:m:s')}}</td>
+                  <td>
+                      <div class="func_admin">
+                      <a href="/admin/edit/{{$card->id}}" class="edit-btn"><i class="uil uil-edit"></i>Editar</a>
+                      <form action="/admin/{{$card->id}}" method="POST">
+                          @csrf
+                          @method('DELETE')
+                          <button type="submit" class="delete-btn"><i class="uil uil-trash-alt"></i>Deletar</button>
+                      </form>
+                  </div>
+                  </td>
+                </tr>
+                  @endforeach
+                @else
+                    <td>Nenhum livro registrado.</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                @endif
+                {{-- @foreach ($leretec as $card)
+              <tr>
+                <th scope="row">{{$card->name_aluno}}</th>
+                <td>{{$card->title_historia}}</td>
+                <td>{{$card->created_at->format('d/m/Y')}}</td>
+                <td>{{$card->updated_at->format('d/m/Y H:m:s')}}</td>
+                <td>
+                    <div class="func_admin">
+                    <a href="/admin/edit/{{$card->id}}" class="edit-btn"><i class="uil uil-edit"></i>Editar</a>
+                    <form action="/admin/{{$card->id}}" method="POST">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="delete-btn"><i class="uil uil-trash-alt"></i>Deletar</button>
+                    </form>
+                </div>
+                </td>
+              </tr>
+                @endforeach --}}
+            </tbody>
+          </table>
         </div>
     </div>
 @endsection

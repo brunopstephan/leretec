@@ -16,7 +16,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@700&display=swap" rel="stylesheet"> 
-    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
 
     {{-- SWIPER JS --}}
     <link rel="stylesheet"href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/>
@@ -52,10 +52,21 @@
                 </svg>
                 
         </a>
-            <ul class = "nav_menu">
+            <div class="btn-nav btn-group">
+              <button class="btn btn-sm" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="bi bi-text-center"></i>
+              </button>
+              <ul class="dropdown-nav dropdown-menu">
+                <li><a href = "/">Envie sua História</a></li>
+                <li>DARKMODE</li>
+                <hr>
+                <li><a class="button" href = "/login"><i class="uil uil-lock"></i></a></li>
+              </ul>
+            </div>
+            {{-- <ul class = "nav_menu">
             <li><a href = "/">Envie sua História</a></li>
             <li><a class="button" href = "/login"><i class="uil uil-lock"></i></a></li>
-          </ul>
+          </ul> --}}
       </div> 
     </nav>
 
@@ -111,7 +122,6 @@
           </svg>
     </a>  
  
-
     <!-- Bootstrap Bundle with Popper -->
     <script src = "{{ asset('/js/popper.min.js') }}"></script>
     <script src = "{{ asset('/js/bootstrap.min.js') }}"></script>

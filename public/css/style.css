@@ -26,13 +26,13 @@
 
 }
 
-
+html,
 body {
     font-family: 'Montserrat', sans-serif;
     line-height: 1.7;
     color: var(--color-white);
     background: var(--color-bg);
-    
+    transition: var(--transition);
 }
 
 .btn-all {
@@ -42,6 +42,13 @@ body {
     color: white;
     transition: var(--transition);
 
+}
+
+.no_history{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding-right: 10rem;
 }
 
 .btn-all:hover{
@@ -120,6 +127,21 @@ nav {
 }
 
 
+.dropdown-nav{
+    color: white;
+    border: 1px solid gray;
+    border-radius: 1rem;
+    background: var(--nav-primary);
+    width: 15rem;
+    text-align: center;
+    transition: 0.5s;
+}
+
+.bi-text-center{
+    color: white;
+    font-size: 1.2rem;
+}
+
 .window-scroll{
     background: var(--nav-primary);
     box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
@@ -149,15 +171,14 @@ nav {
     transition: var(--transition);
 }
 
-.nav_menu a:hover{
-    color:var(--color-bg2)
+a:hover{
+    color:var(--color-bg)
 
 }
 
 .nav_menu .uil-lock{
     height: 10rem;
 }
-
 
 /* -------------> Footer <-------------  */
 
@@ -323,7 +344,7 @@ footer ul {
 
 .card img {
     border-radius: 2rem;
-    height: 20rem;
+    height: 28rem;
     width: 100%;
 }
 
@@ -489,13 +510,21 @@ footer ul {
     transition: all 400ms ease;
 }
 
+.table_admin{
+    color: white;
+}
 
+.func_admin{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
 
 .delete-btn{
     background: red;
     border: none;
     border-radius: 3rem;
-    margin-top: 10px;
     transition: all 300ms ease;
     font-weight: 600;
 }
@@ -511,7 +540,6 @@ footer ul {
     border-radius: 3rem;
     color: black;
     padding-inline: 0.7rem;
-    padding-block: 0.2rem;
     font-weight: 600;
     transition: all 300ms ease;
 }
@@ -521,8 +549,6 @@ footer ul {
     color: black;
 }
 
-
-
 /* edit */
 
 .img-preview{
@@ -531,5 +557,4 @@ footer ul {
     border: 2px solid black;
     border-radius: 5rem;
 }
-
 
