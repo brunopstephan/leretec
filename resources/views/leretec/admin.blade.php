@@ -64,7 +64,7 @@
                   <th scope="row">{{$card->name_aluno}}</th>
                   <td>{{$card->title_historia}}</td>
                   <td>{{$card->created_at->format('d/m/Y')}}</td>
-                  <td>{{$card->updated_at->format('d/m/Y H:m:s')}}</td>
+                  <td>{{$card->updated_at->format('d/m/Y H:i:s')}}</td>
                   <td>
                       <div class="func_admin">
                       <a href="/admin/edit/{{$card->id}}" class="edit-btn"><i class="uil uil-edit"></i>Editar</a>
@@ -105,4 +105,5 @@
           </table>
         </div>
     </div>
+    {{$leretec->links()}}
 @endsection

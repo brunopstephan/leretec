@@ -1,3 +1,4 @@
+
 :root{
     --color-primary: #000000;
     --nav-primary:#0f0f0f; 
@@ -558,3 +559,8 @@ footer ul {
     border-radius: 5rem;
 }
 
+.pagination{
+    display: flex;
+    justify-content: center;
+    border: 2px solid red;
+}

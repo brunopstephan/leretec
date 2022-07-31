@@ -20,6 +20,8 @@
 
     {{-- SWIPER JS --}}
     <link rel="stylesheet"href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/>
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet"href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
     
     <title>Leretec</title>
 
@@ -129,23 +131,16 @@
 
     {{-- SWIPER JS --}}
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
     <script>
-      var swiper = new Swiper(".mySwiper", {
-        slidesPerView: 1,
-        spaceBetween: 30,
-        pagination: {
-          el: ".swiper-pagination",
-          clickable: true,
+      var swiper = new Swiper(".mySwiper", {+
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
         },
-        // quando a width da janela for >= 600px
-        breakpoints: {
-          600: {
-            slidesPerView: 2
-          }
-        }
-      }); 
+      });
     </script>
-    
     {{-- JavaScript Geral --}}
     <script src = "/js/main.js"></script>
    

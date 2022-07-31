@@ -11,4 +11,5 @@ class Leretec extends Model
 
     protected $guarded = [];
 
+
 }

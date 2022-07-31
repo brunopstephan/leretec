@@ -4,11 +4,12 @@
 
     {{-- ============== CAROUSEL ==================== --}}
     
+    
     <!-- Swiper -->
     <div class="container swiper mySwiper">
         <div class="swiper-wrapper">
-            @if (count($leretec))
-            @foreach ($leretec as $carousel)
+            @if (count($leretec_carousel))
+            @foreach ($leretec_carousel as $carousel)
             <div class="swiper-slide">
                 @if ($carousel->cover_historia == null)
                 <img src="img/default_image.png" alt="">
@@ -57,8 +58,8 @@
         -->
     <div class="container card-container">
         <div class="row">
-            @if (count($leretec))
-            @foreach ($leretec as $card)
+            @if (count($leretec_card))
+            @foreach ($leretec_card as $card)
             <div class="card_history">
                 <!-- Card -->
                 <div class="card-book card text-center shadow-lg">
@@ -88,6 +89,7 @@
             </div>
         <!--fim da coluna -->
         @endforeach
+        {{-- {{$leretec_card->links()}} --}}
             @else
                 <div class="no_history"><h1>Nenhuma historia Registrada.</h1></div>
             @endif
@@ -124,6 +126,5 @@
         </div>
     </div>
 
-    
 
 @endsection

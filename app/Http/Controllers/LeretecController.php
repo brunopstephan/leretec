@@ -5,21 +5,23 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreUpdateBookFormRequest;
 use App\Models\Leretec;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class LeretecController extends Controller
 {
     public function index(){
-        $leretec = Leretec::all();
-        return view('/leretec/home',['leretec' => $leretec]);
+        $leretec_carousel = Leretec::all();
+        $leretec_card = Leretec::orderByDesc('id')->paginate(3);
+        return view('/leretec/home',['leretec_card' => $leretec_card, 'leretec_carousel' => $leretec_carousel]);
     }
 
     public function index_admin(){
-        $leretec = Leretec::all();
+        $leretec = Leretec::orderByDesc('id')->paginate(6);
         return view('/leretec/admin',['leretec' => $leretec]);
     }
 
-    public function index_historia(){
-        $leretec = Leretec::all();
+    public function index_historia($id){
+        $leretec = Leretec::findOrFail($id);
         return view('/leretec/history',['leretec' => $leretec]);
     }
 
