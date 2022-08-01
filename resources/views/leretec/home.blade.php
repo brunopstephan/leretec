@@ -75,7 +75,7 @@
                         </div>
                     </div><!-- card-body -->
                     <div class="card-footer">
-                        <a href="/historia" class="btn btn-secondary w-100 my-3" target="_blank" rel="noreferrer noopener">Ler Historia</a>
+                        <a href="{{route('view_user_pdf')}}" class="btn btn-secondary w-100 my-3" target="_blank" rel="noreferrer noopener">Ler Historia</a>
                         <ul>
                             <li>
                                 <h5>Sinopse</h5>

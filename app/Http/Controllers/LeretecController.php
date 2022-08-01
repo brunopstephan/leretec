@@ -6,6 +6,7 @@ use App\Http\Requests\StoreUpdateBookFormRequest;
 use App\Models\Leretec;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Barryvdh\DomPDF\Facade\Pdf;
 
 class LeretecController extends Controller
 {
@@ -15,7 +16,7 @@ class LeretecController extends Controller
         return view('/leretec/home',['leretec_card' => $leretec_card, 'leretec_carousel' => $leretec_carousel]);
     }
 
-    public function index_admin(){
+    public function index_admin(){  
         $leretec = Leretec::orderByDesc('id')->paginate(6);
         return view('/leretec/admin',['leretec' => $leretec]);
     }
@@ -62,6 +63,20 @@ class LeretecController extends Controller
         Leretec::findOrFail($request->id)->update($request->all());
 
         return redirect('/admin');
+    }
+
+    public function export_user_pdf(){
+        $pdf = PDF::loadView('pdf.teste');
+        return $pdf->download('teste.pdf');
+    }
+
+    public function view_user_pdf(){
+        //ESSA LINHA É PRA PUXAR DO BANDO DEDADOS
+        // $teste=Teste::get();
+        $pdf = PDF::loadView('pdf.teste', [
+            // 'teste'=>$teste   //ESSA PARADA É PRA PODER USAR O FOREACH NO ARQUIVO DO PDF
+        ]);
+        return $pdf->stream();
     }
 
 }
