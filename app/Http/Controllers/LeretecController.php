@@ -20,8 +20,8 @@ class LeretecController extends Controller
         return view('/leretec/admin',['leretec' => $leretec]);
     }
 
-    public function index_historia($id){
-        $leretec = Leretec::findOrFail($id);
+    public function index_historia(){
+        $leretec = Leretec::all();
         return view('/leretec/history',['leretec' => $leretec]);
     }
 
