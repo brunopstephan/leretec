@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <html lang = "pt-br">
   <head>
+    <style>
+      body {
+        visibility: hidden;
+        opacity: 0;
+      }
+    </style>
     <!-- Required meta tags -->
     <meta charset = "utf-8">
     <meta http-equiv = "X-UA-Compatible" content = "IE-edge">
@@ -24,7 +30,6 @@
     <link rel="stylesheet"href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
     
     <title>Leretec</title>
-
   </head>
 
   <body>
@@ -60,7 +65,15 @@
               </button>
               <ul class="dropdown-nav dropdown-menu">
                 <li><a href = "/">Envie sua História</a></li>
-                <li>DARKMODE</li>
+                <li>
+                  <div class="teste">
+                    <input type="checkbox" name="change-theme" id="change-theme">
+                    <label for="change-theme">
+                        <i class="bi bi-sun"></i>
+                        <i class="bi bi-moon"></i>
+                    </label>
+                </div>
+              </li>
                 <hr>
                 <li><a class="button" href = "/login"><i class="uil uil-lock"></i></a></li>
               </ul>
@@ -134,7 +147,7 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
 
     <script>
-      var swiper = new Swiper(".mySwiper", {+
+      var swiper = new Swiper(".mySwiper", {
         navigation: {
           nextEl: ".swiper-button-next",
           prevEl: ".swiper-button-prev",
@@ -142,7 +155,7 @@
       });
     </script>
     {{-- JavaScript Geral --}}
-    <script src = "/js/main.js"></script>
+    <script src="/js/main.js"></script>
    
    
   </body>

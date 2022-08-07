@@ -11,13 +11,13 @@ use Barryvdh\DomPDF\Facade\Pdf;
 class LeretecController extends Controller
 {
     public function index(){
-        $leretec_carousel = Leretec::all();
-        $leretec_card = Leretec::orderByDesc('id')->paginate(3);
-        return view('/leretec/home',['leretec_card' => $leretec_card, 'leretec_carousel' => $leretec_carousel]);
+        $leretec_carousel = Leretec::orderByDesc('id')->get();
+        $leretec_card = Leretec::orderByDesc('id')->paginate(9);
+        return view('/leretec/home',['leretec_card' => $leretec_card, 'leretec_carousel' => $leretec_carousel]);    
     }
 
     public function index_admin(){  
-        $leretec = Leretec::orderByDesc('id')->paginate(6);
+        $leretec = Leretec::orderByDesc('id')->paginate(10);
         return view('/leretec/admin',['leretec' => $leretec]);
     }
 
@@ -65,17 +65,16 @@ class LeretecController extends Controller
         return redirect('/admin');
     }
 
-    public function export_user_pdf(){
-        $pdf = PDF::loadView('pdf.teste');
-        return $pdf->download('teste.pdf');
+    public function export_user_pdf($id){
+        $leretec = Leretec::findOrFail($id);
+        $pdf = PDF::loadView('pdf.teste', ['leretec'=>$leretec]);
+        return $pdf->download('a.pdf');
     }
 
-    public function view_user_pdf(){
+    public function view_user_pdf($id){
         //ESSA LINHA É PRA PUXAR DO BANDO DEDADOS
-        // $teste=Teste::get();
-        $pdf = PDF::loadView('pdf.teste', [
-            // 'teste'=>$teste   //ESSA PARADA É PRA PODER USAR O FOREACH NO ARQUIVO DO PDF
-        ]);
+        $leretec = Leretec::findOrFail($id);
+        $pdf = PDF::loadView('pdf.teste', ['leretec'=>$leretec]);
         return $pdf->stream();
     }
 

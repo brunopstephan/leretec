@@ -57,7 +57,8 @@
                 <div class="invalid-feedback" data-sb-feedback="tituloDaHistoria:required">Titulo da História é obrigatório.</div>
             </div>
             <div class="form-card form-floating mb-3">
-                <input name="cover_historia" class="form-control" id="tituloDaHistoria" type="text" placeholder="URL da Imagem." data-sb-validations="required" />
+                <input name="cover_historia" class="form-control" id="capaDaHistoria" type="text" placeholder="URL da Imagem." data-sb-validations="required" />
+                <img id="imgPreview" src="img/default_image.png" alt="" class="img-preview">
                 <label for="tituloDaHistoria">Capa da História</label>
                 <div class="invalid-feedback" data-sb-feedback="tituloDaHistoria:required">Titulo da História é obrigatório.</div>
             </div>

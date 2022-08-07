@@ -50,6 +50,6 @@ Route::get('/admin/edit/{id}', [LeretecController::class, 'edit']);
 
 Route::put('/admin/update/{id}', [LeretecController::class, 'update']);
 
-Route::get('/export_user_pdf', [LeretecController::class, 'export_user_pdf'])->name('export_user_pdf');
+Route::get('/export_user_pdf/{id}', [LeretecController::class, 'export_user_pdf']);
 
-Route::get('/view_user_pdf', [LeretecController::class, 'view_user_pdf'])->name('view_user_pdf');
+Route::get('/view_user_pdf/{id}', [LeretecController::class, 'view_user_pdf']);

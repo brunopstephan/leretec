@@ -20,29 +20,16 @@
                     <h5>{{$carousel->title_historia}}</h5>
                     <a href="/historia" class="btn-all btn-carousel btn-lg" target="_blank">Ler História</a>
                     </div>
-            </div>
-            @endforeach
-            @else
-            <div class="swiper-slide">
-                <img src="img/default_image.png" alt="">
-                <div class="carousel-caption d-none d-md-block">
-                    <h5>Nenhum Livro Resgistrado.</h5>
-                    </div>
-            </div>
-            @endif
-            {{-- @foreach ($leretec as $carousel)
-            <div class="swiper-slide">
-                @if ($carousel->cover_historia == null)
-                <img src="img/default_image.png" alt="">
+                </div>
+                @endforeach
                 @else
-                <img src="{{$carousel->cover_historia}}" alt="">
+                <div class="swiper-slide">
+                    <img src="img/default_image.png" alt="">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Nenhum Livro Resgistrado.</h5>
+                        </div>
+                </div>
                 @endif
-                <div class="carousel-caption d-none d-md-block">
-                    <h5>{{$carousel->title_historia}}</h5>
-                    <a href="/historia" class="btn-all btn-carousel btn-lg" target="_blank">Ler História</a>
-                    </div>
-            </div>
-            @endforeach --}}
         </div>
         <div class="swiper-button-next"></div>
         <div class="swiper-button-prev"></div>
@@ -75,7 +62,7 @@
                         </div>
                     </div><!-- card-body -->
                     <div class="card-footer">
-                        <a href="{{route('view_user_pdf')}}" class="btn btn-secondary w-100 my-3" target="_blank" rel="noreferrer noopener">Ler Historia</a>
+                        <a href="/view_user_pdf/{{$card->id}}" class="btn btn-secondary w-100 my-3" target="_blank" rel="noreferrer noopener">Ler Historia</a>
                         <ul>
                             <li>
                                 <h5>Sinopse</h5>
