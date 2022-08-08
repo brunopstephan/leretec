@@ -10,6 +10,7 @@ class Leretec extends Model
     use HasFactory;
 
     protected $guarded = [];
+    protected $dates = ['date'];
 
 
 }

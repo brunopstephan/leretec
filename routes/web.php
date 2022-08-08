@@ -42,7 +42,7 @@ Route::get('/', [LeretecController::class, 'index']);
 
 Route::get('/admin', [LeretecController::class, 'index_admin']);
 
-Route::get('/historia', [LeretecController::class, 'index_historia']); 
+Route::get('/historia/{id}', [LeretecController::class, 'index_historia']); 
 
 Route::delete('/admin/{id}', [LeretecController::class, 'destroy']);
 
@@ -50,6 +50,6 @@ Route::get('/admin/edit/{id}', [LeretecController::class, 'edit']);
 
 Route::put('/admin/update/{id}', [LeretecController::class, 'update']);
 
-Route::get('/export_user_pdf/{id}', [LeretecController::class, 'export_user_pdf']);
+Route::get('/historia/export_user_pdf/{id}', [LeretecController::class, 'export_user_pdf']);
 
-Route::get('/view_user_pdf/{id}', [LeretecController::class, 'view_user_pdf']);
+Route::get('/historia/view_user_pdf/{id}', [LeretecController::class, 'view_user_pdf']);
