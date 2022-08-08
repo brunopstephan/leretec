@@ -18,7 +18,7 @@
                 @endif
                 <div class="carousel-caption d-none d-md-block">
                     <h5>{{$carousel->title_historia}}</h5>
-                    <a href="/historia" class="btn-all btn-carousel btn-lg" target="_blank">Ler História</a>
+                    <a href="/historia/{{$carousel->id}}" class="btn-all btn-carousel btn-lg" target="_blank">Ler História</a>
                     </div>
             </div>
             @endforeach
@@ -75,7 +75,7 @@
                         </div>
                     </div><!-- card-body -->
                     <div class="card-footer">
-                        <a href="/historia" class="btn btn-secondary w-100 my-3" target="_blank" rel="noreferrer noopener">Ler Historia</a>
+                        <a href="/historia/{{$card->id}}" class="btn btn-secondary w-100 my-3" target="_blank" rel="noreferrer noopener">Ler Historia</a>
                         <ul>
                             <li>
                                 <h5>Sinopse</h5>
