@@ -33,7 +33,7 @@
   </head>
 
   <body>
-    <nav>
+    <nav class="nav">
       <div class = "container nav_container">
         <a href = "/">
             <svg width="87" height="77" viewBox="0 0 157 147" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">

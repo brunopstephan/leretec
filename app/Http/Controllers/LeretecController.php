@@ -12,12 +12,12 @@ class LeretecController extends Controller
 {
     public function index(){
         $leretec_carousel = Leretec::orderByDesc('id')->get();
-        $leretec_card = Leretec::orderByDesc('id')->paginate(9);
+        $leretec_card = Leretec::orderByDesc('id')->paginate(12);
         return view('/leretec/home',['leretec_card' => $leretec_card, 'leretec_carousel' => $leretec_carousel]);    
     }
 
     public function index_admin(){  
-        $leretec = Leretec::orderByDesc('id')->paginate(10);
+        $leretec = Leretec::orderByDesc('id')->paginate(20);
         return view('/leretec/admin',['leretec' => $leretec]);
     }
 

@@ -76,7 +76,7 @@
             </div>
         <!--fim da coluna -->
         @endforeach
-        {{-- {{$leretec_card->links()}} --}}
+        
             @else
                 <div class="no_history"><h1>Nenhuma historia Registrada.</h1></div>
             @endif
@@ -111,6 +111,7 @@
         <!--fim da coluna -->
         @endforeach --}}
         </div>
+            {{$leretec_card->links()}}
     </div>
 
 

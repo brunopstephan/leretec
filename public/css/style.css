@@ -188,7 +188,7 @@ li {
 }
 
 
-nav {
+.nav {
     background: transparent;
     width: 100vw;
     height: 5rem;
@@ -631,10 +631,11 @@ footer ul {
     border-radius: 5rem;
 }
 
-.pagination{
+
+nav .pagination{
+    bottom: 50px;
     display: flex;
     justify-content: center;
-    border: 2px solid red;
 }
 
 /* pdf historia */

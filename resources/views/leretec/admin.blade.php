@@ -76,6 +76,7 @@
                   </div>
                   </td>
                 </tr>
+                
                   @endforeach
                 @else
                     <td>Nenhum livro registrado.</td>
@@ -104,6 +105,6 @@
             </tbody>
           </table>
         </div>
+        {{$leretec->links()}}
     </div>
-    {{$leretec->links()}}
 @endsection
