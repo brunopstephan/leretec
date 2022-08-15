@@ -45,7 +45,7 @@
         -->
     <div class="container card-container">
         <div class="row">
-            @if (count($leretec_card))
+            {{-- @if (count($leretec_card))
             @foreach ($leretec_card as $card)
             <div class="card_history">
                 <!-- Card -->
@@ -79,37 +79,26 @@
         
             @else
                 <div class="no_history"><h1>Nenhuma historia Registrada.</h1></div>
-            @endif
-            {{-- @foreach ($leretec as $card)
-            <div class="card_history">
-                <!-- Card -->
-                <div class="card-book card text-center shadow-lg">
-                        @if ($card->cover_historia == null)
-                        <img src="img/default_image.png" alt="">
-                        @else
-                        <img src="{{$card->cover_historia}}" alt="">
-                        @endif
-                        
-                    <div class="card-body">
-                        <div class="d-flex bd_highlight">
-                            <h5 class="card-title w-100">{{$card->title_historia}}</h5>
-                        </div>
-                    </div><!-- card-body -->
-                    <div class="card-footer">
-                        <a href="/historia" class="btn btn-secondary w-100 my-3" target="_blank" rel="noreferrer noopener">Ler Historia</a>
-                        <ul>
-                            <li>
-                                <h5>Sinopse</h5>
-                                <div class="sinopse">
-                                    <p>{{$card->sinopse_historia}}</p>
-                                </div>
-                            </li>
-                        </ul>
-                    </div><!-- fim do card-footer -->
-                </div><!-- fim do card -->
-            </div>
-        <!--fim da coluna -->
-        @endforeach --}}
+            @endif --}}
+        
+
+            <div class="card-history">
+                <div class="card-image">
+                    <img src="img/default_image.png" alt="">
+                </div>
+                <div class="card-info">
+                    <p>Data de Inserção:  - Última atualização: </p>
+                    <p>Bruno Piffer - Desenvolvimento de Sistemas - 1º ano</p>
+                    <h2>Titulo</h2>
+                    <p class="card-sinopse">Harry Potter é um garoto órfão que vive infeliz com seus tios, os Dursleys. Ele recebe uma carta contendo um convite para ingressar em Hogwarts, uma famosa escola especializada em formar jovens bruxos. Inicialmente, Harry é impedido de ler a carta por seu tio, mas logo recebe a visita de Hagrid, o guarda-caça de Hogwarts, que chega para levá-lo até a escola. Harry adentra um mundo mágico que jamais imaginara, vivendo diversas aventuras com seus novos amigos, Rony Weasley e Hermione Granger. ...</p>
+                    <div class="botoes-historia">
+                        <a class="btn-all btn-hist" href="/historia/view_user_pdf/">Ler Historia</a>
+                        <a class="btn-all btn-hist" href="/historia/export_user_pdf/">Baixar Historia</a>
+                    </div>
+                </div>
+            </div>     
+
+
         </div>
             {{$leretec_card->links()}}
     </div>

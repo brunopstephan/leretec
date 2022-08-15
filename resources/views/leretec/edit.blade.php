@@ -22,11 +22,6 @@
             @csrf {{--permitindo que todo mundo poss afazer POST sem estar autenticado --}}
             @method('PUT')
             <div class="form-card form-floating mb-3">
-                <input name="date" class="form-control" id="data" type="date" placeholder="" value="{{$leretec->date}}"  />
-                <label for="data">Data</label>
-                <div class="invalid-feedback" data-sb-feedback="data:required">Data é obrigatório.</div>
-            </div>
-            <div class="form-card form-floating mb-3">
                 <input name="name_aluno" class="form-control" id="nomeDoAluno" type="text" placeholder="Nome do Aluno" value="{{$leretec->name_aluno}}" data-sb-validations="required" />
                 <label for="nomeDoAluno">Nome do Aluno</label>
                 <div class="invalid-feedback" data-sb-feedback="nomeDoAluno:required">Nome do Aluno é obrigatório.</div>
