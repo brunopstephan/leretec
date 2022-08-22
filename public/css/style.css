@@ -563,6 +563,21 @@ footer ul {
     opacity: 1;
 } */
 
+/* search */
+
+.search {
+    width: 100%;
+    padding-bottom: 2rem;
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.search #search{
+    width: 50rem;
+}
+
 
 
 /* BACK TO TOP BUTTON */

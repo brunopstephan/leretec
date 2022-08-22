@@ -28,6 +28,9 @@
     <link rel="stylesheet"href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/>
     <!-- Link Swiper's CSS -->
     <link rel="stylesheet"href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
+
+        {{-- jquery --}}
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     
     <title>Leretec</title>
   </head>
@@ -156,6 +159,41 @@
     </script>
     {{-- JavaScript Geral --}}
     <script src="/js/main.js"></script>
+
+    <script type="text/javascript">
+
+      $('#search').on('keyup', function() {
+
+        $value=$(this).val();
+
+        if($value){
+          $('.all_history').hide()
+          $('.leretec_links').hide()
+          $('.search_history').show()
+
+        }else{
+          $('.all_history').show()
+          $('.leretec_links').show()
+          $('.search_history').hide()
+        }
+
+        $.ajax({
+
+          type:'get',
+          url:'{{URL::to('search')}}',
+          data:{'search':$value},
+
+          success:function(data)
+          {
+            console.log(data)
+            $('#Content').html(data)
+          }
+ 
+        })
+
+      })
+
+    </script>
    
    
   </body>

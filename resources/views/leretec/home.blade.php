@@ -80,8 +80,14 @@
             @else
                 <div class="no_history"><h1>Nenhuma historia Registrada.</h1></div>
             @endif --}}
+
+            <div class="search">
+                <h1>Pesquisa:</h1>
+                <input type="search" name="search" id="search" placeholder="Procurar uma historia ou aluno" class="form-control">
+            </div>
         
             @if (count($leretec_card))
+            <div class="all_history">
                 @foreach ($leretec_card as $card)
                 <div class="card-history">
                     <div class="card-image">
@@ -113,12 +119,18 @@
                     </div>
                 </div>     
                 @endforeach
+            </div>
+
+            <div id="Content" class="search_history">
+                    
+            </div>
+
             @else
             <div class="no_history"><h1>Nenhuma historia Registrada.</h1></div>
             @endif
 
         </div>
-            {{$leretec_card->links()}}
+        <div class="leretec_links">{{$leretec_card->links()}}</div>
     </div>
 
 @endsection

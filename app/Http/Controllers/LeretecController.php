@@ -69,7 +69,7 @@ class LeretecController extends Controller
     public function export_user_pdf(Request $request){
         $leretec = Leretec::findOrFail($request->id);
         $pdf = PDF::loadView('pdf.teste', ['leretec'=>$leretec]);
-        return $pdf->download('.pdf');
+        return $pdf->download('a.pdf');
     }
 
     public function view_user_pdf($id){
@@ -77,5 +77,49 @@ class LeretecController extends Controller
         $pdf = PDF::loadView('pdf.teste', ['leretec'=>$leretec]);
         return $pdf->stream();
     }
+
+    public function search(Request $request){
+        $output="";
+        $history_search=Leretec::orderByDesc('id')->where('title_historia', 'Like', '%'.$request->search.'%')->orWhere('name_aluno', 'Like', '%'.$request->search.'%')->get();
+
+        foreach($history_search as $history_search)
+        {
+            $output.=
+
+            '<div class="card-history">
+                <div class="card-image">
+                    <img src="'.$history_search->cover_historia.'" alt="">
+                </div>
+                <div class="card-info">
+                    <p>Data de Inserção: '.$history_search->date->format('d/m/Y').' - Última atualização: '.$history_search->updated_at->format('d/m/Y').'</p>
+                    <p>'.$history_search->name_aluno.' - '.$history_search->class_aluno.' - '.$history_search->grade_aluno.'º ano</p>
+                    <h2>'.$history_search->title_historia.'</h2>
+                    <div class="sinopse-container">
+                     <p class="card-sinopse">'.$history_search->sinopse_historia.'</p>
+                     <ul>
+                         <li>
+                             <p>Ler mais...</p>
+                             <div class="sinopse-content">
+                             <p>'.$history_search->sinopse_historia.'</p>
+                             </div>
+                         </li>
+                     </ul>
+                 </div>
+
+                 <div class="botoes-historia">
+                 <a class="btn-all btn-hist" href="/historia/view_user_pdf/'.$history_search->id.'" target="_blank">Ler Historia</a>
+                 <a class="btn-all btn-hist" href="/historia/export_user_pdf/'.$history_search->id.'">Baixar Historia</a>
+                 </div>
+                    
+                </div>
+            </div>   
+            ';
+        }
+        
+        return response($output);
+
+
+    }
+
 
 }

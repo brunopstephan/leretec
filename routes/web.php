@@ -53,3 +53,5 @@ Route::put('/admin/update/{id}', [LeretecController::class, 'update']);
 Route::get('/historia/export_user_pdf/{id}', [LeretecController::class, 'export_user_pdf']);
 
 Route::get('/historia/view_user_pdf/{id}', [LeretecController::class, 'view_user_pdf']);
+
+Route::get('/search', [LeretecController::class, 'search']);
