@@ -1,10 +1,10 @@
 @extends('layouts/main')
 
 @section('container')
-<div class="container">
-    <div class="login-row row">
+<div class="container card-container">
+    <div class="row">
         <div class="col-12">
-            <div class="card shadow-sm">
+            <div class="login-form card shadow-sm">
                 <div class="card-header text-white">
                     <h1>Modo Administrador</h1>
                 </div>

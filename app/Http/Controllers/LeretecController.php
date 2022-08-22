@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\EditFormRequest;
 use App\Http\Requests\StoreUpdateBookFormRequest;
 use App\Models\Leretec;
 use Illuminate\Http\Request;
@@ -12,7 +13,7 @@ class LeretecController extends Controller
 {
     public function index(){
         $leretec_carousel = Leretec::orderByDesc('id')->get();
-        $leretec_card = Leretec::orderByDesc('id')->paginate(12);
+        $leretec_card = Leretec::orderByDesc('id')->paginate(6);
         return view('/leretec/home',['leretec_card' => $leretec_card, 'leretec_carousel' => $leretec_carousel]);    
     }
 
@@ -58,21 +59,20 @@ class LeretecController extends Controller
 
     }
 
-    public function update(StoreUpdateBookFormRequest $request) {
+    public function update(EditFormRequest $request) {
 
         Leretec::findOrFail($request->id)->update($request->all());
 
         return redirect('/admin');
     }
 
-    public function export_user_pdf($id){
-        $leretec = Leretec::findOrFail($id);
+    public function export_user_pdf(Request $request){
+        $leretec = Leretec::findOrFail($request->id);
         $pdf = PDF::loadView('pdf.teste', ['leretec'=>$leretec]);
-        return $pdf->download('a.pdf');
+        return $pdf->download('.pdf');
     }
 
     public function view_user_pdf($id){
-        //ESSA LINHA É PRA PUXAR DO BANDO DEDADOS
         $leretec = Leretec::findOrFail($id);
         $pdf = PDF::loadView('pdf.teste', ['leretec'=>$leretec]);
         return $pdf->stream();

@@ -81,27 +81,44 @@
                 <div class="no_history"><h1>Nenhuma historia Registrada.</h1></div>
             @endif --}}
         
-
-            <div class="card-history">
-                <div class="card-image">
-                    <img src="img/default_image.png" alt="">
-                </div>
-                <div class="card-info">
-                    <p>Data de Inserção:  - Última atualização: </p>
-                    <p>Bruno Piffer - Desenvolvimento de Sistemas - 1º ano</p>
-                    <h2>Titulo</h2>
-                    <p class="card-sinopse">Harry Potter é um garoto órfão que vive infeliz com seus tios, os Dursleys. Ele recebe uma carta contendo um convite para ingressar em Hogwarts, uma famosa escola especializada em formar jovens bruxos. Inicialmente, Harry é impedido de ler a carta por seu tio, mas logo recebe a visita de Hagrid, o guarda-caça de Hogwarts, que chega para levá-lo até a escola. Harry adentra um mundo mágico que jamais imaginara, vivendo diversas aventuras com seus novos amigos, Rony Weasley e Hermione Granger. ...</p>
-                    <div class="botoes-historia">
-                        <a class="btn-all btn-hist" href="/historia/view_user_pdf/">Ler Historia</a>
-                        <a class="btn-all btn-hist" href="/historia/export_user_pdf/">Baixar Historia</a>
+            @if (count($leretec_card))
+                @foreach ($leretec_card as $card)
+                <div class="card-history">
+                    <div class="card-image">
+                        @if ($card->cover_historia == null)
+                        <img src="img/default_image.png" alt="">
+                        @else
+                        <img src="{{$card->cover_historia}}" alt="">
+                        @endif
                     </div>
-                </div>
-            </div>     
-
+                    <div class="card-info">
+                        <p>Data de Inserção: {{$card->date->format('d/m/Y')}} - Última atualização: {{$card->updated_at->format('d/m/Y')}}</p>
+                        <p>{{$card->name_aluno}} - {{$card->class_aluno}} - {{$card->grade_aluno}}º ano</p>
+                        <h2>{{$card->title_historia}}</h2>
+                        <div class="sinopse-container">
+                            <p class="card-sinopse">{{$card->sinopse_historia}}</p>
+                            <ul>
+                                <li>
+                                    <p>Ler mais...</p>
+                                    <div class="sinopse-content">
+                                      <p>{{$card->sinopse_historia}}</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="botoes-historia">
+                            <a class="btn-all btn-hist" href="/historia/view_user_pdf/{{$card->id}}" target="_blank">Ler Historia</a>
+                            <a class="btn-all btn-hist" href="/historia/export_user_pdf/{{$card->id}}">Baixar Historia</a>
+                        </div>
+                    </div>
+                </div>     
+                @endforeach
+            @else
+            <div class="no_history"><h1>Nenhuma historia Registrada.</h1></div>
+            @endif
 
         </div>
             {{$leretec_card->links()}}
     </div>
-
 
 @endsection
