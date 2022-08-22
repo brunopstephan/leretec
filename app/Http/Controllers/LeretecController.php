@@ -88,7 +88,7 @@ class LeretecController extends Controller
 
             '<div class="card-history">
                 <div class="card-image">
-                    <img src="'.$history_search->cover_historia.'" alt="">
+                    <img class="coverSearch" src="'.$history_search->cover_historia.'" alt="" id="'.$history_search->id.'"onerror="defaultCover('.$history_search->id.')">
                 </div>
                 <div class="card-info">
                     <p>Data de Inserção: '.$history_search->date->format('d/m/Y').' - Última atualização: '.$history_search->updated_at->format('d/m/Y').'</p>

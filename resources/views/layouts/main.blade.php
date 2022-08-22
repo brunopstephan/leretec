@@ -69,7 +69,7 @@
               <ul class="dropdown-nav dropdown-menu">
                 <li><a href = "/">Envie sua História</a></li>
                 <li>
-                  <div class="teste">
+                  <div class="options_nav">
                     <input type="checkbox" name="change-theme" id="change-theme">
                     <label for="change-theme">
                         <i class="bi bi-sun"></i>
@@ -193,8 +193,13 @@
 
       })
 
+      function defaultCover(id)
+      {
+        document.getElementById(id).src = "img/default_image.png";
+      }
+
     </script>
    
    
-  </body>
+  </body> 
 </html>
