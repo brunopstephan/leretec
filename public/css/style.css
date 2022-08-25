@@ -614,6 +614,22 @@ footer ul {
     margin-bottom: 2rem;
 }
 
+.form-check{
+    display: flex;
+    gap: .5rem;
+    margin-bottom: 1rem;
+}
+
+.form-check input[type="checkbox"]{
+    display: block;
+}
+
+.form-check-label{
+    height: 1rem;
+    width: 15rem;
+    color: white;
+}
+
 /* FORM */
 
 .form-card{
@@ -635,10 +651,14 @@ footer ul {
     background: transparent;
 }
 
+.back{
+    display: flex;
+    gap: 1rem;
+}
 
 .back .btn-back{
-    position: absolute;
     display: flex;
+    gap: .5rem;
     align-items: center;
     justify-content: center;
 }
@@ -798,3 +818,10 @@ nav .pagination{
     padding: 1rem;
 }
 */
+
+/* REQUESTS ERRORS */
+
+.form-error{
+    margin-top: 10px;
+    color: red;
+}

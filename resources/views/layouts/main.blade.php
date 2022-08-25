@@ -78,7 +78,12 @@
                 </div>
               </li>
                 <hr>
+                @auth
+                <li><a class="button" href = "/admin"><i class="uil uil-lock"></i></a></li>
+                @endauth
+                @guest
                 <li><a class="button" href = "/login"><i class="uil uil-lock"></i></a></li>
+                @endguest
               </ul>
             </div>
             {{-- <ul class = "nav_menu">

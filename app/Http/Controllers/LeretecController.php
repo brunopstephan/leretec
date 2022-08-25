@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\EditFormRequest;
 use App\Http\Requests\StoreUpdateBookFormRequest;
 use App\Models\Leretec;
 use Illuminate\Http\Request;
@@ -11,6 +10,8 @@ use Barryvdh\DomPDF\Facade\Pdf;
 
 class LeretecController extends Controller
 {
+
+
     public function index(){
         $leretec_carousel = Leretec::orderByDesc('id')->get();
         $leretec_card = Leretec::orderByDesc('id')->paginate(6);
@@ -59,11 +60,12 @@ class LeretecController extends Controller
 
     }
 
-    public function update(EditFormRequest $request) {
+    public function update(StoreUpdateBookFormRequest $request) {
 
-        Leretec::findOrFail($request->id)->update($request->all());
+            Leretec::findOrFail($request->id)->update($request->all());
 
-        return redirect('/admin');
+            return redirect('/admin');
+        
     }
 
     public function export_user_pdf(Request $request){

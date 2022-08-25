@@ -35,4 +35,23 @@ class StoreUpdateBookFormRequest extends FormRequest
             
         ];
     }
+
+            /**
+             * Get the error messages for the defined validation rules.
+             *
+             * @return array
+             */
+            public function messages()
+            {
+                return [
+                    'date.required' => 'Data é obrigatória.',
+                    'name_aluno.required' => 'Nome do aluno é obrigatório.',
+                    'class_aluno.required' => 'Curso do aluno é obrigatório.',
+                    'grade_aluno.required' => 'Série do aluno é obrigatório.',
+                    'title_historia.required' => 'Título da história é obrigatório.',
+                    'sinopse_historia.required' => 'Sinopse da história é obrigatória.',
+                    'historia.required' => 'Historia é obrigatória.',
+                ];
+            }
+
 }
