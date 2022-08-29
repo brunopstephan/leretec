@@ -6,7 +6,7 @@
     
     
     <!-- Swiper -->
-    <div class="container swiper mySwiper">
+    {{-- <div class="container swiper mySwiper">
         <div class="swiper-wrapper">
             @if (count($leretec_carousel))
             @foreach ($leretec_carousel as $carousel)
@@ -33,7 +33,7 @@
         </div>
         <div class="swiper-button-next"></div>
         <div class="swiper-button-prev"></div>
-      </div>
+      </div> --}}
 
     {{-- ============== CARD ==================== --}}
 
@@ -82,11 +82,102 @@
             @endif --}}
 
             <div class="search">
-                <h1>Pesquisa:</h1>
                 <input type="search" name="search" id="search" placeholder="Procurar uma historia ou aluno" class="form-control">
+                <select class=" filter form-select" name="filter" id="filter" onchange="filter()">
+                    <option value="recent">Mais recentes</option>
+                    <option value="old">Mais antigas</option>
+                </select>
             </div>
-        
-            @if (count($leretec_card))
+            
+            <div id="recent">
+                @if (count($leretec_card))
+                <div class="all_history">
+                    @foreach ($leretec_card as $card)
+                    <div class="card-history">
+                        <div class="card-image">
+                            @if ($card->cover_historia == null)
+                            <img src="img/default_image.png" alt="">
+                            @else
+                            <img src="{{$card->cover_historia}}" alt="">
+                            @endif
+                        </div>
+                        <div class="card-info">
+                            <p>id: {{$card->id}} Data de Inserção: {{$card->date->format('d/m/Y')}} - Última atualização: {{$card->updated_at->format('d/m/Y')}}</p>
+                            <p>{{$card->name_aluno}} - {{$card->class_aluno}} - {{$card->grade_aluno}}º ano</p>
+                            <h2>{{$card->title_historia}}</h2>
+                            <div class="sinopse-container">
+                                <p class="card-sinopse">{{$card->sinopse_historia}}</p>
+                                <ul>
+                                    <li>
+                                        <p>Ler mais...</p>
+                                        <div class="sinopse-content">
+                                          <p>{{$card->sinopse_historia}}</p>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="botoes-historia">
+                                <a class="btn-all btn-hist" href="/historia/view_user_pdf/{{$card->id}}" target="_blank">Ler Historia</a>
+                                <a class="btn-all btn-hist" href="/historia/export_user_pdf/{{$card->id}}">Baixar Historia</a>
+                            </div>
+                        </div>
+                    </div>     
+                    @endforeach
+                </div>
+    
+                <div id="Content" class="search_history">
+                        
+                </div>
+    
+                @else
+                <div class="no_history"><h1>Nenhuma historia Registrada.</h1></div>
+                @endif
+            </div>
+            <div id="old">
+                @if (count($leretec_card2))
+                <div class="all_history">
+                    @foreach ($leretec_card2 as $card)
+                    <div class="card-history">
+                        <div class="card-image">
+                            @if ($card->cover_historia == null)
+                            <img src="img/default_image.png" alt="">
+                            @else
+                            <img src="{{$card->cover_historia}}" alt="">
+                            @endif
+                        </div>
+                        <div class="card-info">
+                            <p>id: {{$card->id}} Data de Inserção: {{$card->date->format('d/m/Y')}} - Última atualização: {{$card->updated_at->format('d/m/Y')}}</p>
+                            <p>{{$card->name_aluno}} - {{$card->class_aluno}} - {{$card->grade_aluno}}º ano</p>
+                            <h2>{{$card->title_historia}}</h2>
+                            <div class="sinopse-container">
+                                <p class="card-sinopse">{{$card->sinopse_historia}}</p>
+                                <ul>
+                                    <li>
+                                        <p>Ler mais...</p>
+                                        <div class="sinopse-content">
+                                          <p>{{$card->sinopse_historia}}</p>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="botoes-historia">
+                                <a class="btn-all btn-hist" href="/historia/view_user_pdf/{{$card->id}}" target="_blank">Ler Historia</a>
+                                <a class="btn-all btn-hist" href="/historia/export_user_pdf/{{$card->id}}">Baixar Historia</a>
+                            </div>
+                        </div>
+                    </div>     
+                    @endforeach
+                </div>
+    
+                <div id="Content2" class="search_history">
+                        
+                </div>
+    
+                @else
+                <div class="no_history"><h1>Nenhuma historia Registrada.</h1></div>
+                @endif
+            </div>
+            {{-- @if (count($leretec_card))
             <div class="all_history">
                 @foreach ($leretec_card as $card)
                 <div class="card-history">
@@ -98,7 +189,7 @@
                         @endif
                     </div>
                     <div class="card-info">
-                        <p>Data de Inserção: {{$card->date->format('d/m/Y')}} - Última atualização: {{$card->updated_at->format('d/m/Y')}}</p>
+                        <p>id: {{$card->id}} Data de Inserção: {{$card->date->format('d/m/Y')}} - Última atualização: {{$card->updated_at->format('d/m/Y')}}</p>
                         <p>{{$card->name_aluno}} - {{$card->class_aluno}} - {{$card->grade_aluno}}º ano</p>
                         <h2>{{$card->title_historia}}</h2>
                         <div class="sinopse-container">
@@ -127,10 +218,11 @@
 
             @else
             <div class="no_history"><h1>Nenhuma historia Registrada.</h1></div>
-            @endif
+            @endif --}}
 
         </div>
-        <div class="leretec_links">{{$leretec_card->links()}}</div>
+        {{-- <div class="leretec_links">{{$leretec_card->links()}}</div>
+        <div class="leretec_links">{{$leretec_card2->links()}}</div> --}}
     </div>
 
 @endsection

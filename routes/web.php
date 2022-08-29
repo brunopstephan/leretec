@@ -38,6 +38,10 @@ Route::get('/historia', function () {
     return view('leretec/history');
 });
 
+Route::get('/landing', function () {
+    return view('leretec/landingpage');
+});
+
 
 
 Route::post('/form/cadastrar', [LeretecController::class,'store'])->middleware('admin');
@@ -59,6 +63,7 @@ Route::get('/historia/export_user_pdf/{id}', [LeretecController::class, 'export_
 Route::get('/historia/view_user_pdf/{id}', [LeretecController::class, 'view_user_pdf']);
 
 Route::get('/search', [LeretecController::class, 'search']);
+Route::get('/search2', [LeretecController::class, 'search2']);
 
 
 //admin routes

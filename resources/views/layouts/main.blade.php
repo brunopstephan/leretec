@@ -198,10 +198,59 @@
 
       })
 
-      function defaultCover(id)
-      {
-        document.getElementById(id).src = "img/default_image.png";
+      $('#search').on('keyup', function() {
+
+        $value=$(this).val();
+
+        if($value){
+          $('.all_history').hide()
+          $('.leretec_links').hide()
+          $('.search_history').show()
+
+        }else{
+          $('.all_history').show()
+          $('.leretec_links').show()
+          $('.search_history').hide()
+        }
+
+        $.ajax({
+
+          type:'get',
+          url:'{{URL::to('search2')}}',
+          data:{'search':$value},
+
+          success:function(data)
+          {
+            console.log(data)
+            $('#Content2').html(data)
+          }
+
+        })
+
+        })
+
+      function filter(){
+        var getSelectedFilter = document.getElementById("filter").value
+
+        if(getSelectedFilter == "recent"){
+          document.getElementById("recent").style.display = 'block'
+          document.getElementById("old").style.display = 'none'
+        }else if (getSelectedFilter == "old"){
+          document.getElementById("recent").style.display = 'none'
+          document.getElementById("old").style.display = 'block'
+
+        }
+
       }
+
+      document.getElementById("old").style.display = 'none'
+      
+
+
+       function defaultCover(id)
+       {
+         document.getElementById(id).src = "img/default_image.png";
+       }
 
     </script>
    
