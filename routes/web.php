@@ -64,7 +64,13 @@ Route::get('/historia/view_user_pdf/{id}', [LeretecController::class, 'view_user
 
 Route::get('/search', [LeretecController::class, 'search']);
 Route::get('/search2', [LeretecController::class, 'search2']);
+Route::get('/search3', [LeretecController::class, 'search3']);
 
+//admin user management routes
+Route::get('/admin/users', [UserController::class, 'allusers'])->middleware('admin');
+
+Route::get('/admin/users/register', [UserController::class, 'create'])->middleware('admin');
+Route::post('register', [UserController::class, 'store'])->middleware('admin');
 
 //admin routes
 Route::post('/auth', [UserController::class, 'auth']);

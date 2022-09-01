@@ -86,6 +86,7 @@
                 <select class=" filter form-select" name="filter" id="filter" onchange="filter()">
                     <option value="recent">Mais recentes</option>
                     <option value="old">Mais antigas</option>
+                    <option value="most-popular">Mais populares</option>
                 </select>
             </div>
             
@@ -102,7 +103,7 @@
                             @endif
                         </div>
                         <div class="card-info">
-                            <p>id: {{$card->id}} Data de Inserção: {{$card->date->format('d/m/Y')}} - Última atualização: {{$card->updated_at->format('d/m/Y')}}</p>
+                            <p>views: {{$card->view}} id: {{$card->id}} Data de Inserção: {{$card->date->format('d/m/Y')}} - Última atualização: {{$card->updated_at->format('d/m/Y')}}</p>
                             <p>{{$card->name_aluno}} - {{$card->class_aluno}} - {{$card->grade_aluno}}º ano</p>
                             <h2>{{$card->title_historia}}</h2>
                             <div class="sinopse-container">
@@ -146,7 +147,7 @@
                             @endif
                         </div>
                         <div class="card-info">
-                            <p>id: {{$card->id}} Data de Inserção: {{$card->date->format('d/m/Y')}} - Última atualização: {{$card->updated_at->format('d/m/Y')}}</p>
+                            <p>views: {{$card->view}} id: {{$card->id}} Data de Inserção: {{$card->date->format('d/m/Y')}} - Última atualização: {{$card->updated_at->format('d/m/Y')}}</p>
                             <p>{{$card->name_aluno}} - {{$card->class_aluno}} - {{$card->grade_aluno}}º ano</p>
                             <h2>{{$card->title_historia}}</h2>
                             <div class="sinopse-container">
@@ -170,6 +171,50 @@
                 </div>
     
                 <div id="Content2" class="search_history">
+                        
+                </div>
+    
+                @else
+                <div class="no_history"><h1>Nenhuma historia Registrada.</h1></div>
+                @endif
+            </div>
+            <div id="most-popular">
+                @if (count($leretec_card3))
+                <div class="all_history">
+                    @foreach ($leretec_card3 as $card)
+                    <div class="card-history">
+                        <div class="card-image">
+                            @if ($card->cover_historia == null)
+                            <img src="img/default_image.png" alt="">
+                            @else
+                            <img src="{{$card->cover_historia}}" alt="">
+                            @endif
+                        </div>
+                        <div class="card-info">
+                            <p>views: {{$card->view}} id: {{$card->id}} Data de Inserção: {{$card->date->format('d/m/Y')}} - Última atualização: {{$card->updated_at->format('d/m/Y')}}</p>
+                            <p>{{$card->name_aluno}} - {{$card->class_aluno}} - {{$card->grade_aluno}}º ano</p>
+                            <h2>{{$card->title_historia}}</h2>
+                            <div class="sinopse-container">
+                                <p class="card-sinopse">{{$card->sinopse_historia}}</p>
+                                <ul>
+                                    <li>
+                                        <p>Ler mais...</p>
+                                        <div class="sinopse-content">
+                                          <p>{{$card->sinopse_historia}}</p>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="botoes-historia">
+                                <a class="btn-all btn-hist" href="/historia/view_user_pdf/{{$card->id}}" target="_blank">Ler Historia</a>
+                                <a class="btn-all btn-hist" href="/historia/export_user_pdf/{{$card->id}}">Baixar Historia</a>
+                            </div>
+                        </div>
+                    </div>     
+                    @endforeach
+                </div>
+    
+                <div id="Content3" class="search_history">
                         
                 </div>
     

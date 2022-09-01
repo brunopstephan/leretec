@@ -229,22 +229,62 @@
 
         })
 
+        $('#search').on('keyup', function() {
+
+          $value=$(this).val();
+
+          if($value){
+            $('.all_history').hide()
+            $('.leretec_links').hide()
+            $('.search_history').show()
+
+          }else{
+            $('.all_history').show()
+            $('.leretec_links').show()
+            $('.search_history').hide()
+          }
+
+          $.ajax({
+
+            type:'get',
+            url:'{{URL::to('search3')}}',
+            data:{'search':$value},
+
+            success:function(data)
+            {
+              console.log(data)
+              $('#Content3').html(data)
+            }
+
+          })
+
+          })
+
+        
+
       function filter(){
         var getSelectedFilter = document.getElementById("filter").value
 
         if(getSelectedFilter == "recent"){
           document.getElementById("recent").style.display = 'block'
           document.getElementById("old").style.display = 'none'
+          document.getElementById("most-popular").style.display = 'none'
         }else if (getSelectedFilter == "old"){
           document.getElementById("recent").style.display = 'none'
           document.getElementById("old").style.display = 'block'
+          document.getElementById("most-popular").style.display = 'none'
+
+        }else if (getSelectedFilter == "most-popular"){
+          document.getElementById("recent").style.display = 'none'
+          document.getElementById("old").style.display = 'none'
+          document.getElementById("most-popular").style.display = 'block'
 
         }
 
       }
 
       document.getElementById("old").style.display = 'none'
-      
+      document.getElementById("most-popular").style.display = 'none'
 
 
        function defaultCover(id)

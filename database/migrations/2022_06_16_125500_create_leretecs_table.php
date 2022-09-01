@@ -16,6 +16,7 @@ return new class extends Migration
     {
         Schema::create('leretecs', function (Blueprint $table) {
             $table->id();
+            $table->integer('view')->default(0);
             $table->date('date');
             $table->string('name_aluno');
             $table->string('class_aluno');

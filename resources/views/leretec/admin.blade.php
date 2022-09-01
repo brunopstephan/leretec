@@ -5,6 +5,7 @@
         <div class="back">
             <a href="/" class="btn-back btn-all btn-sm"><i class="uil uil-corner-up-left-alt"></i>Voltar</a>
             <a href="{{route('logout')}}" class="btn-back btn-all btn-sm"><i class="bi bi-arrow-bar-left"></i> Sair do Modo Administrador</a>
+            <a href="/admin/users" class="btn-back btn-all btn-sm">Gerenciar Usuários</a>
         </div>
         <a href="/form" class="btn-all btn-add btn-md">Inserir Historia</a>
         <div class="admin-row row">
