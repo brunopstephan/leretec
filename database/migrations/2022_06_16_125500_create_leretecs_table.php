@@ -4,6 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 use phpDocumentor\Reflection\Types\Nullable;
+use Illuminate\Support\Facades\DB;
 
 return new class extends Migration
 {
@@ -27,6 +28,16 @@ return new class extends Migration
             $table->longtext('historia');
             $table->timestamps();
         });
+
+        DB::table('users')->insert(
+            array(
+                'name' => 'admin',
+                'email' => 'admin@admin.com',
+                'password' => '$2y$10$SW4OjXI3bQQnEPSTlrdfkuRSt7mZkTP7rnTyIoBF62g3KBvnnWIM.', //admin
+                'created_at' => '2022-09-03 11:03:50',
+                'updated_at' => '2022-09-03 11:03:50'
+            )
+        );
     }
 
     /**

@@ -77,9 +77,10 @@ class LeretecController extends Controller
     }
 
     public function export_user_pdf(Request $request){
+        $title = Leretec::where('id', $request->id)->value('title_historia');
         $leretec = Leretec::findOrFail($request->id);
         $pdf = PDF::loadView('pdf.teste', ['leretec'=>$leretec]);
-        return $pdf->download('a.pdf');
+        return $pdf->download($title.'.pdf');
     }
 
     public function view_user_pdf(Request $request){
