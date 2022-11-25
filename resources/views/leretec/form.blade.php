@@ -11,7 +11,7 @@
             <h1>Cadastrar</h1>
         </div>
 
-        <form action="/form/cadastrar" method="POST">
+        <form id="preventDoubleSubmit" action="/form/cadastrar" method="POST">
             @csrf {{--permitindo que todo mundo poss afazer POST sem estar autenticado --}}
             <div class="form-card form-floating mb-3">
                 <input name="date" class="form-control" id="data" type="date" placeholder="Data" data-sb-validations="required" />
@@ -37,7 +37,7 @@
             </div>
             <div class="form-card form-floating mb-3">
                 <select name="class_aluno" class="form-select" id="cursoDoAluno" aria-label="Curso do Aluno">
-                    <option value="Selecione um Curso">Selecione um Curso</option>
+                    {{-- <option value="Selecione um Curso">Selecione um Curso</option> --}}
                     <option value="Desenvolvimento de Sistemas">Desenvolvimento de Sistemas</option>
                     <option value="Eletrônica">Eletrônica</option>
                     <option value="Química">Química</option>
@@ -51,11 +51,11 @@
             </div>
             <div class="form-card form-floating mb-3">
                 <select name="grade_aluno" class="form-select" id="serieDoAluno" aria-label="Série do Aluno">
-                    <option value="Selecione a Série do aluno">Selecione a Série do aluno</option>
-                    <option value="1">1º Ano</option>
-                    <option value="2">2º Ano</option>
-                    <option value="3">3º Ano</option>
-                    <option value="4">Anônimo</option>
+                    {{-- <option value="Selecione a Série do aluno">Selecione a Série do aluno</option> --}}
+                    <option value="1º ano">1º Ano</option>
+                    <option value="2º ano">2º Ano</option>
+                    <option value="3º ano">3º Ano</option>
+                    <option value="Anônimo">Anônimo</option>
                 </select>
                 <label for="serieDoAluno">Série do Aluno</label>
             </div>
@@ -72,7 +72,7 @@
             </div>
             <div class="form-card form-floating mb-3">
                 <input name="cover_historia" class="form-control" id="capaDaHistoria" type="text" placeholder="URL da Imagem." data-sb-validations="required" />
-                <img id="imgPreview" src="img/default_image.png" alt="" class="img-preview">
+                <img onerror="defaultCoverPreview()" id="imgPreview" src="img/default_image.png" alt="" class="img-preview">
                 <label for="tituloDaHistoria">Capa da História</label>
             </div>
             <div class="form-card form-floating mb-3">
@@ -87,7 +87,7 @@
                 @endif
             </div>
             <div class="form-card form-floating mb-3">
-                <textarea name="historia" class="form-control" id="Historia" type="text" placeholder="História" style="height: 10rem;" data-sb-validations="required"></textarea>
+                <textarea name="historia" class="form-control" id="Historia" type="text" placeholder="História" style="height: 30rem;" data-sb-validations="required" oninput="console.log(document.getElementById('Historia').value)"></textarea>
                 <label for="sinopseDaHistoria">História</label>
                 @if ($errors->any())
                 <p class="form-error">
@@ -98,7 +98,7 @@
                 @endif
             </div>
             <div class="d-flex">
-                <button class="btn-all btn-lg flex-fill me-1" id="submitButton" type="submit">Enviar</button>
+                <button class="btn-all btn-lg flex-fill me-1" id="btnAll" type="submit">Enviar</button>
                 <button class="btn-all btn-lg flex-fill ms-1" id="reset" type="reset">Limpar</button> 
             </div>
         </form>

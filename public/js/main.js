@@ -2,10 +2,10 @@ function showTheme() {
     loadTheme();
   }
   
-  function showContent() {
+   function showContent() {
     document.body.style.visibility = 'visible';
     document.body.style.opacity = 1;
-  }
+  } 
   
   window.addEventListener('DOMContentLoaded', function () {
     showTheme();
@@ -57,19 +57,22 @@ window.addEventListener('scroll', () => {
 
 })  
 
+    if(document.getElementById("preventDoubleSubmit") != null){
+        document.getElementById("preventDoubleSubmit").addEventListener("submit", () => {
+        document.getElementById("btnAll").setAttribute('disabled', '')
+    })
 
-var input = document.getElementById("capaDaHistoria")
-var preview = document.getElementById("imgPreview")
-input.addEventListener("input", () => {
-  preview.src=input.value
+    var input = document.getElementById("capaDaHistoria")
+    var preview = document.getElementById("imgPreview")
+    input.addEventListener("input", () => {
+        preview.src=input.value
 })
 
-var swiper = new Swiper(".mySwiper", {
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-    },
-  });
+}
+
+
+
+
 
 
 

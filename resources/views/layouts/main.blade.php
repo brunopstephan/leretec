@@ -61,35 +61,71 @@
                 </defs>
                 </svg>
                 
-        </a>
-            <div class="btn-nav btn-group">
-              <button class="btn btn-sm" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                <i class="bi bi-text-center"></i>
-              </button>
-              <ul class="dropdown-nav dropdown-menu">
-                <li><a href = "/">Envie sua História</a></li>
-                <li>
-                  <div class="options_nav">
-                    <input type="checkbox" name="change-theme" id="change-theme">
-                    <label for="change-theme">
-                        <i class="bi bi-sun"></i>
-                        <i class="bi bi-moon"></i>
-                    </label>
-                </div>
-              </li>
-                <hr>
-                @auth
-                <li><a class="button" href = "/admin"><i class="uil uil-lock"></i></a></li>
-                @endauth
-                @guest
-                <li><a class="button" href = "/login"><i class="uil uil-lock"></i></a></li>
-                @endguest
-              </ul>
+                Leretec
+
+              </a>
+
+              {{-- ----------------NAV MOBILE-------------------- --}}
+
+              <div class="nav_mobile btn-nav btn-group">
+                <button class="btn btn-sm" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <i class="bi bi-text-center"></i>
+                </button>
+                <ul class="dropdown-nav dropdown-menu">
+                  <?php
+                    $config = json_decode(file_get_contents('.felps'), true);
+                    echo '<li><a href = "'.$config['link'].'" target="_blank">Envie sua História</a></li>';
+                  ?>
+                  <li>
+                    <div class="options_nav">
+                      <input type="checkbox" name="change-theme" id="change-theme">
+                      <label for="change-theme">
+                          <i class="bi bi-sun"></i>
+                          <i class="bi bi-moon"></i>
+                      </label>
+                  </div>
+                </li>
+                  <hr>
+                  @auth
+                  <li><a class="button" href = "/admin"><i class="uil uil-lock"></i></a></li>
+                  @endauth
+                  @guest
+                  <li><a class="button" href = "/login"><i class="uil uil-lock"></i></a></li>
+                  @endguest
+                </ul>
+              </div>
+              {{-- ---------------------------------------------------------------------- --}}
+          
+
+              {{-- ----------------NAV MOBILE-------------------- --}}
+
+          <ul class = "nav_menu">
+            <?php 
+                  
+            /*Atualizar*/
+            /* file_put_contents(".felps","link vovo 2"); */
+            
+            $config = json_decode(file_get_contents('.felps'), true);       
+
+            echo '<li><a href = "'.$config['link'].'" target="_blank">Envie sua História</a></li>';
+
+            ?>
+            <li>
+              <div class="options_nav">
+                <input type="checkbox" name="change-theme" id="change-theme">
+                <label for="change-theme">
+                    <i class="bi bi-sun"></i>
+                    <i class="bi bi-moon"></i>
+                </label>
             </div>
-            {{-- <ul class = "nav_menu">
-            <li><a href = "/">Envie sua História</a></li>
+          </li>
+            @auth
+            <li><a class="button" href = "/admin"><i class="uil uil-lock"></i></a></li>
+            @endauth
+            @guest
             <li><a class="button" href = "/login"><i class="uil uil-lock"></i></a></li>
-          </ul> --}}
+            @endguest
+            </ul>
       </div> 
     </nav>
 
@@ -98,39 +134,43 @@
                               {{-- Footer --}}
 
 <footer>
-      <div class="rodape">
+    <div class="rodape">
           <div class="rodape_container">
             <div class="info">
-              <a href="/" class="rodape_logo"><img src="logo.png" alt=""></a>
+              <a href="/" class="rodape_logo"><img src="../logo.png" alt=""></a>
               <h1>Leretec</h1>
           </div>
         <div class="company">
           <h4>Empresa</h4>
             <ul class="permalinks">
-                <li><a href="#"> Sobre</a></li>
-                <li><a href="#">Contato</a></li>
-                <li><a href="#">Suporte</a></li>
+                <?php
+                $config = json_decode(file_get_contents('.felps'), true);
+                echo "<li><a href=".$config['contact']." target='_blank'>Contato</a></li>";
+                ?>
             </ul>
         </div>
       </div>
 
-            <div class="rodape_socials">
-            <ul>
-                <li>
-                    <a href="#"><i class="uil uil-instagram-alt"></i></a>
-                </li>
-                <li>
-                    <a href="#"><i class="uil uil-facebook-f"></i></a>
-                </li>
-                <li>
-                    <a href="#"><i class="uil uil-twitter-alt"></i></a>
-                </li>
-            </ul>    
+          <div class="rodape_socials">
+            <?php 
+            $config = json_decode(file_get_contents('.felps'), true);
+              echo "<ul>";
+                echo "<li>";
+                  echo "<a href=".$config['instagram']." target='_blank'><i class='uil uil-instagram-alt'></i></a>";
+                echo "</li>";
+                echo "<li>";
+                  echo "<a href=".$config['facebook']." target='_blank'><i class='uil uil-facebook-f'></i></a>";
+                echo "</li>";
+                echo "<li>";
+                  echo "<a href=".$config['twitter']." target='_blank'><i class='uil uil-twitter-alt'></i></a>";
+                echo "</li>";
+            echo "</ul>"; 
+            ?>   
       </div>
     </div>
       
         <div class="rodape_copyright">
-          <small>Copyright &copy; 2022 Leretec</small>
+          <small>Copyright &copy; {{ now()->year }} Leretec</small>
         </div>
 
 </footer> 
@@ -146,8 +186,8 @@
     </a>  
  
     <!-- Bootstrap Bundle with Popper -->
-    <script src = "{{ asset('/js/popper.min.js') }}"></script>
-    <script src = "{{ asset('/js/bootstrap.min.js') }}"></script>
+{{--     <script src = "{{ asset('/js/popper.min.js') }}"></script>
+    <script src = "{{ asset('/js/bootstrap.min.js') }}"></script> --}}
     <script src = "{{ asset('/js/bootstrap.bundle.min.js') }}"></script>
 
     {{-- SWIPER JS --}}
@@ -162,6 +202,7 @@
         },
       });
     </script>
+    
     {{-- JavaScript Geral --}}
     <script src="/js/main.js"></script>
 
@@ -200,9 +241,9 @@
 
       $('#search').on('keyup', function() {
 
-        $value=$(this).val();
+        $value2=$(this).val();
 
-        if($value){
+        if($value2){
           $('.all_history').hide()
           $('.leretec_links').hide()
           $('.search_history').show()
@@ -217,7 +258,7 @@
 
           type:'get',
           url:'{{URL::to('search2')}}',
-          data:{'search':$value},
+          data:{'search':$value2},
 
           success:function(data)
           {
@@ -231,9 +272,9 @@
 
         $('#search').on('keyup', function() {
 
-          $value=$(this).val();
+          $value3=$(this).val();
 
-          if($value){
+          if($value3){
             $('.all_history').hide()
             $('.leretec_links').hide()
             $('.search_history').show()
@@ -248,7 +289,7 @@
 
             type:'get',
             url:'{{URL::to('search3')}}',
-            data:{'search':$value},
+            data:{'search':$value3},
 
             success:function(data)
             {
@@ -283,14 +324,28 @@
 
       }
 
-      document.getElementById("old").style.display = 'none'
-      document.getElementById("most-popular").style.display = 'none'
+      old = document.getElementById("old");
+      
+
+      if(old != null)
+      {
+        old.style.display = 'none'
+        document.getElementById("most-popular").style.display = 'none'
+      }
+
 
 
        function defaultCover(id)
        {
-         document.getElementById(id).src = "img/default_image.png";
+         document.getElementById(id).src = "../../img/default_image.png";
        }
+
+       function defaultCoverPreview()
+       {
+         document.getElementById("imgPreview").src = "../../img/default_image.png";
+       }//tome
+
+
 
     </script>
    

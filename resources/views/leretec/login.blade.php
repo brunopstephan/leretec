@@ -11,7 +11,7 @@
                 <div class="card-body">
                     <div class="container px-3 my-3">
 
-                        <form action="/auth" method="POST">
+                        <form id="preventDoubleSubmit" action="/auth" method="POST">
                             @csrf
 
                             @if (session('danger'))
@@ -34,7 +34,7 @@
                             @enderror
                             </div>
 
-                            <button type="submit" class="btn-all btn-lg">Entrar</button>
+                            <button id="btnAll" type="submit" class="btn-all btn-lg">Entrar</button>
 
                         </form>
                     </div>

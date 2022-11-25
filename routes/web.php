@@ -18,7 +18,7 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-Route::get('/', function () {
+Route::get('/home', function () {
     return view('leretec/home');
 });
 
@@ -30,23 +30,25 @@ Route::get('/login', function () {
     return view('leretec/login');
 });
 
-Route::get('/admin', function () {
-    return view('leretec/admin');
-});
+// Route::get('/admin', function () {
+//     return view('leretec/admin');
+// }); 
 
-Route::get('/historia', function () {
-    return view('leretec/history');
-});
-
-Route::get('/landing', function () {
+Route::get('/', function () {
     return view('leretec/landingpage');
 });
+
+Route::get('/admin/newlink', function () {
+    return view('leretec/newlink');
+})->middleware('admin');
+
+
 
 
 
 Route::post('/form/cadastrar', [LeretecController::class,'store'])->middleware('admin');
 
-Route::get('/', [LeretecController::class, 'index']);
+Route::get('/home', [LeretecController::class, 'index']);
 
 Route::get('/admin', [LeretecController::class, 'index_admin'])->middleware('admin');
 
@@ -67,12 +69,12 @@ Route::get('/search2', [LeretecController::class, 'search2']);
 Route::get('/search3', [LeretecController::class, 'search3']);
 
 //admin user management routes
-Route::get('/admin/users', [UserController::class, 'allusers'])->middleware('admin');
+// Route::get('/admin/users', [UserController::class, 'allusers'])->middleware('admin');
 
-Route::get('/admin/users/register', [UserController::class, 'create'])->middleware('admin');
-Route::post('register', [UserController::class, 'store'])->middleware('admin');
+// Route::get('/admin/users/register', [UserController::class, 'create'])->middleware('admin');
+// Route::post('register', [UserController::class, 'store'])->middleware('admin');
 
-//admin routes
+// //admin auth routes
 Route::post('/auth', [UserController::class, 'auth']);
 
 Route::get('/logout', [UserController::class, 'logout'])->name('logout');

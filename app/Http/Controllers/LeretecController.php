@@ -27,14 +27,14 @@ class LeretecController extends Controller
     }
 
     public function index_admin(){  
-        $leretec = Leretec::orderByDesc('id')->paginate(20);
+        $leretec = Leretec::orderByDesc('id')->get();
         return view('/leretec/admin',['leretec' => $leretec]);
     }
 
-    public function index_historia($id){
-        $leretec = Leretec::findOrFail($id);
-        return view('/leretec/history',['leretec' => $leretec]);
-    }
+    // public function index_historia($id){
+    //     $leretec = Leretec::findOrFail($id);
+    //     return view('/leretec/history',['leretec' => $leretec]);
+    // }
 
     public function store(StoreUpdateBookFormRequest $request){
         $leretec = new Leretec();
@@ -122,7 +122,7 @@ class LeretecController extends Controller
                 </div>
                 <div class="card-info">
                     <p>👀'.$history_search->view.' Data de Inserção: '.$history_search->date->format('d/m/Y').' - Última atualização: '.$history_search->updated_at->format('d/m/Y').'</p>
-                    <p>'.$history_search->name_aluno.' - '.$history_search->class_aluno.' - '.$history_search->grade_aluno.'º ano</p>
+                    <p>'.$history_search->name_aluno.' - '.$history_search->class_aluno.' - '.$history_search->grade_aluno.'</p>
                     <h2>'.$history_search->title_historia.'</h2>
                     <div class="sinopse-container">
                      <p class="card-sinopse">'.$history_search->sinopse_historia.'</p>
@@ -145,7 +145,7 @@ class LeretecController extends Controller
             </div>   
             ';
             $n++;
-        }
+        }   
         
         return response($output);
 
@@ -168,7 +168,7 @@ class LeretecController extends Controller
                 </div>
                 <div class="card-info">
                     <p>👀'.$history_search->view.' Data de Inserção: '.$history_search->date->format('d/m/Y').' - Última atualização: '.$history_search->updated_at->format('d/m/Y').'</p>
-                    <p>'.$history_search->name_aluno.' - '.$history_search->class_aluno.' - '.$history_search->grade_aluno.'º ano</p>
+                    <p>'.$history_search->name_aluno.' - '.$history_search->class_aluno.' - '.$history_search->grade_aluno.'</p>
                     <h2>'.$history_search->title_historia.'</h2>
                     <div class="sinopse-container">
                      <p class="card-sinopse">'.$history_search->sinopse_historia.'</p>
@@ -214,7 +214,7 @@ class LeretecController extends Controller
                 </div>
                 <div class="card-info">
                     <p>👀'.$history_search->view.' Data de Inserção: '.$history_search->date->format('d/m/Y').' - Última atualização: '.$history_search->updated_at->format('d/m/Y').'</p>
-                    <p>'.$history_search->name_aluno.' - '.$history_search->class_aluno.' - '.$history_search->grade_aluno.'º ano</p>
+                    <p>'.$history_search->name_aluno.' - '.$history_search->class_aluno.' - '.$history_search->grade_aluno.'</p>
                     <h2>'.$history_search->title_historia.'</h2>
                     <div class="sinopse-container">
                      <p class="card-sinopse">'.$history_search->sinopse_historia.'</p>

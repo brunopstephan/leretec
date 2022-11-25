@@ -83,7 +83,7 @@
 
             <div class="search">
                 <input type="search" name="search" id="search" placeholder="Procurar uma historia ou aluno" class="form-control">
-                <select class=" filter form-select" name="filter" id="filter" onchange="filter()">
+                <select class="filter form-select" name="filter" id="filter" onchange="filter()">
                     <option value="recent">Mais recentes</option>
                     <option value="old">Mais antigas</option>
                     <option value="most-popular">Mais populares</option>
@@ -103,8 +103,8 @@
                             @endif
                         </div>
                         <div class="card-info">
-                            <p>views: {{$card->view}} id: {{$card->id}} Data de Inserção: {{$card->date->format('d/m/Y')}} - Última atualização: {{$card->updated_at->format('d/m/Y')}}</p>
-                            <p>{{$card->name_aluno}} - {{$card->class_aluno}} - {{$card->grade_aluno}}º ano</p>
+                            <p>👀: {{$card->view}} id: {{$card->id}} Data de Inserção: {{$card->date->format('d/m/Y')}} - Última atualização: {{$card->updated_at->format('d/m/Y')}}</p>
+                            <p>{{$card->name_aluno}} - {{$card->class_aluno}} - {{$card->grade_aluno}}</p>
                             <h2>{{$card->title_historia}}</h2>
                             <div class="sinopse-container">
                                 <p class="card-sinopse">{{$card->sinopse_historia}}</p>
@@ -147,8 +147,8 @@
                             @endif
                         </div>
                         <div class="card-info">
-                            <p>views: {{$card->view}} id: {{$card->id}} Data de Inserção: {{$card->date->format('d/m/Y')}} - Última atualização: {{$card->updated_at->format('d/m/Y')}}</p>
-                            <p>{{$card->name_aluno}} - {{$card->class_aluno}} - {{$card->grade_aluno}}º ano</p>
+                            <p>👀: {{$card->view}} id: {{$card->id}} Data de Inserção: {{$card->date->format('d/m/Y')}} - Última atualização: {{$card->updated_at->format('d/m/Y')}}</p>
+                            <p>{{$card->name_aluno}} - {{$card->class_aluno}} - {{$card->grade_aluno}}</p>
                             <h2>{{$card->title_historia}}</h2>
                             <div class="sinopse-container">
                                 <p class="card-sinopse">{{$card->sinopse_historia}}</p>
@@ -191,8 +191,8 @@
                             @endif
                         </div>
                         <div class="card-info">
-                            <p>views: {{$card->view}} id: {{$card->id}} Data de Inserção: {{$card->date->format('d/m/Y')}} - Última atualização: {{$card->updated_at->format('d/m/Y')}}</p>
-                            <p>{{$card->name_aluno}} - {{$card->class_aluno}} - {{$card->grade_aluno}}º ano</p>
+                            <p>👀: {{$card->view}} id: {{$card->id}} Data de Inserção: {{$card->date->format('d/m/Y')}} - Última atualização: {{$card->updated_at->format('d/m/Y')}}</p>
+                            <p>{{$card->name_aluno}} - {{$card->class_aluno}} - {{$card->grade_aluno}}</p>
                             <h2>{{$card->title_historia}}</h2>
                             <div class="sinopse-container">
                                 <p class="card-sinopse">{{$card->sinopse_historia}}</p>
