@@ -14,13 +14,13 @@
 <h3>Histórias</h3>
 <img src="https://media.discordapp.net/attachments/1000174450181947436/1093123013140021308/image.png?width=680&height=324">
 <h3>Login Administrador:</h3>
-![image](https://user-images.githubusercontent.com/101269702/230057883-7b5ff8fe-b7da-4c34-9147-f03d26721165.png)
+<img src="https://user-images.githubusercontent.com/101269702/230057883-7b5ff8fe-b7da-4c34-9147-f03d26721165.png">
 <h3>HUB Administrador:</h3>
-![image](https://user-images.githubusercontent.com/101269702/230057999-f076ba1f-95a0-4b58-b815-6f09fd5461ae.png)
+<img src="https://user-images.githubusercontent.com/101269702/230057999-f076ba1f-95a0-4b58-b815-6f09fd5461ae.png">
 <h3>Formulário de Inserir/Editar histórias:</h3>
-![image](https://user-images.githubusercontent.com/101269702/230058156-70d57236-6593-41b5-9a71-1531b460ffc7.png)
-![image](https://user-images.githubusercontent.com/101269702/230058197-77116606-ce06-4961-b5a2-a99fa30e8cd5.png)
+<img src="https://user-images.githubusercontent.com/101269702/230058156-70d57236-6593-41b5-9a71-1531b460ffc7.png">
+<img src="https://user-images.githubusercontent.com/101269702/230058197-77116606-ce06-4961-b5a2-a99fa30e8cd5.png">
 <h3>Configuração do site (links de rede sociais, formulário e contato):</h3>
-![image](https://user-images.githubusercontent.com/101269702/230058391-199f3d3f-e0d8-4770-b11f-7e678c68bd37.png)
+<img src="https://user-images.githubusercontent.com/101269702/230058391-199f3d3f-e0d8-4770-b11f-7e678c68bd37.png">
 
 
